@@ -1,0 +1,13 @@
+.offcanvas ul li a
+{
+    font-size: 18px;
+    position: relative;
+    transition: 0.5s;
+
+}
+
+.offcanvas ul li a:hover
+{
+    padding-left: 10px;
+    
+}
