@@ -15,6 +15,12 @@ import { UploadaccComponent } from './uploadacc/uploadacc.component';
 import { HomeMenuComponent } from './home-menu/home-menu.component';
 import { LayoutComponent } from './layout/layout.component';
 import { ForgotComponent } from './forgot/forgot.component';
+import { AccNameComponent } from './acc-name/acc-name.component';
+import { InfoComponent } from './info/info.component';
+import { ContactAccComponent } from './contact-acc/contact-acc.component';
+import { OpportunitiesAccComponent } from './opportunities-acc/opportunities-acc.component';
+import { LeadsAccComponent } from './leads-acc/leads-acc.component';
+import { CommunicationsAccComponent } from './communications-acc/communications-acc.component';
 const appRoutes:Routes=
 [
   {
@@ -22,18 +28,38 @@ const appRoutes:Routes=
     children:
     [
       {
-        path:'',component:HomeComponent
-      },
-      {
         path:'Home',component:HomeComponent
       },
       {
         path:'Accounts',component:AccountsComponent
+        
+      },
+      {
+        path:'AccName',component:AccNameComponent,
+        children:[
+          {
+            path:'Info',component:InfoComponent
+          },
+          {
+            path:'ContactAcc',component:ContactAccComponent
+          },
+          {
+            path:'OpportunitiesAcc',component:OpportunitiesAccComponent
+          },
+          {
+            path:'LeadsAcc',component:LeadsAccComponent
+          },
+          {
+            path:'CommunicationsAcc',component:CommunicationsAccComponent
+          },
+        ]
       }
     ],
 
   },
-
+  // {
+  //        path:'AccName',component:AccNameComponent
+  //      },
   {path:'Signup', component: SignupComponent},
   {path:'Forgot',component: ForgotComponent},
   {path:'Signin',component: SigninComponent},
@@ -56,7 +82,12 @@ const appRoutes:Routes=
      HomeMenuComponent,
      LayoutComponent,
      
-     ForgotComponent
+     ForgotComponent,
+     AccNameComponent,
+     ContactAccComponent,
+     OpportunitiesAccComponent,
+     LeadsAccComponent,
+     CommunicationsAccComponent
      
 
   ],
