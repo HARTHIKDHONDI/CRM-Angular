@@ -21,6 +21,9 @@ import { ContactAccComponent } from './contact-acc/contact-acc.component';
 import { OpportunitiesAccComponent } from './opportunities-acc/opportunities-acc.component';
 import { LeadsAccComponent } from './leads-acc/leads-acc.component';
 import { CommunicationsAccComponent } from './communications-acc/communications-acc.component';
+import { TaskComponent } from './task/task.component';
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+import { CreateTaskComponent } from './create-task/create-task.component'; 
 const appRoutes:Routes=
 [
   {
@@ -53,6 +56,9 @@ const appRoutes:Routes=
             path:'CommunicationsAcc',component:CommunicationsAccComponent
           },
         ]
+      },
+      {
+        path:'Task',component:TaskComponent
       }
     ],
 
@@ -87,7 +93,9 @@ const appRoutes:Routes=
      ContactAccComponent,
      OpportunitiesAccComponent,
      LeadsAccComponent,
-     CommunicationsAccComponent
+     CommunicationsAccComponent,
+     TaskComponent,
+     CreateTaskComponent
      
 
   ],
@@ -96,7 +104,8 @@ const appRoutes:Routes=
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    NgMultiSelectDropDownModule.forRoot(),
   ],
   
   providers: [],

@@ -1,0 +1,229 @@
+
+<div class="container">
+    <div class="row d-flex justify-content-center">
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row  d-flex justify-content-center">
+                        <div class="col-5">
+                            <h2>Create Task</h2>
+    
+                        <label for="exampleInputTC" class="form-label"> Task Category </label>
+    
+                        <select class="form-select" aria-label="Default select example">
+    
+                        <option selected>--Select--</option>
+    
+                        <option value="1">Module Specific Task Category</option>
+    
+                        </select>
+                        <!--Select Module-->
+                        <div class="mb-3">
+    
+                            <label for="exampleInputSM" class="form-label"> Select Module </label>
+        
+                            <select class="form-select" aria-label="Default select example">
+        
+                                <option selected>--Select--</option>
+        
+                                <option value="1">Calender</option>
+        
+                                <option value="2">Accounts</option>
+        
+                                <option value="3">Contacts</option>
+        
+                                <option value="4">Opportunities</option>
+        
+                                <option value="5">Leads</option>
+        
+                            </select>
+                        </div>
+                        <!--Select name-->
+    
+                        <div class="mb-3">
+    
+                            <label for="exampleInputSN" class="form-label">Select Name</label>
+    
+                            <input type="SelectName" placeholder="SelectName" class="form-control"  formControlName="SelectName" >
+    
+                            <!-- <small class="text-danger" *ngIf="userForm.get('SelectName')?.invalid && userForm.get('SelectName')?.touched" class="text-danger">*required</small> -->
+    
+                        </div>
+                    </div>
+                   
+                    </div>
+                    
+                    
+                        <hr>
+                        <div class="text-center">
+                            <h3>Module Specific Task Layout Details</h3>
+                        </div>
+                        
+
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-5">
+                                <div class="mb-3">
+
+                                    <label for="exampleInputAI" class="form-label">Task ID</label>
+                
+                                    <input type="Task ID" class="form-control " placeholder="Task ID" id="exampleInputTI" formControlName="TASKID">
+                
+                                    <!-- <small class="text-danger" *ngIf="userForm.get('TASKID')?.invalid && userForm.get('TASKID')?.touched" class="text-danger">*required</small> -->
+                
+                                </div>
+
+                                <div class="mb-3">
+
+                                    <label for="exampleInputD" class="form-label">Description</label>
+
+                                    <!-- <input type="" class="form-control " placeholder="Description" id="exampleInputJD" formControlName="Description"> -->
+                                    <textarea class="form-control" placeholder="Description" name="Description" id="exampleInputJD" formControlName="Description" rows="3"></textarea>
+                                    <!-- <small class="text-danger" *ngIf="userForm.get('Description')?.invalid && userForm.get('Description')?.touched" class="text-danger">*required</small> -->
+
+                                </div>
+                                <!--Status-->
+
+                                <div class="mb-3">
+
+                                    <label for="exampleInputJD" class="form-label">Status</label>
+
+                                    <!-- <input type="Status" class="form-control" placeholder="Status" id="exampleInputS" formControlName="Status">
+
+                                    <small class="text-danger" *ngIf="userForm.get('Status')?.invalid && userForm.get('Status')?.touched" class="text-danger">*required</small> -->
+
+                                    <select class="form-select" aria-label="select">
+
+                                        <option selected>--select--</option>
+
+                                        <option value="1">Assigned</option>
+
+                                        <option value="2">Inprogress</option>
+
+                                        <option value="3">Closed</option>
+
+                                        <option value="3">On hold</option>
+
+                                        <option value="3">Deferred</option>
+
+                                        <option value="3">Open</option>
+
+                                        <option value="3">Cancelled</option>''
+
+                                    </select>
+
+                                </div>
+                                <!--Due Time-->
+
+                                <div class="cs-form mb-3">
+
+                                    <label for="exampleInputTC" class="form-label"> Due Time</label>
+
+                                    <input type="time" placeholder="Due Time" class="form-control" formControlName="SelectName" value="10:05 AM" />
+
+                                    <!-- <small class="text-danger"  placeholder="Due Time"*ngIf="userForm.get('Duetime')?.invalid && userForm.get('Duetime')?.touched" class="text-danger">*required</small> -->
+
+                                </div>
+
+                                <!--Remainder Time-->
+
+                                <div class="cs-form mb-3" >
+
+                                    <label for="exampleInputTC" class="form-label"> Remainder Time</label>
+
+                                    <input type="time" class="form-control" value="10:05 AM" />
+
+                                </div>
+
+                            </div>
+
+                            <div class="col-5">
+                                <!--Tittle-->
+
+                                <div class="mb-3">
+
+                                    <label for="exampleInputT" class="form-label">Tittle</label>
+
+                                    <input type="Tittle" class="form-control " placeholder="Title" id="exampleInputT" formControlName="Tittle">
+
+                                    <!-- <small class="text-danger" *ngIf="userForm.get('Tittle')?.invalid && userForm.get('Tittle')?.touched" class="text-danger">*required</small> -->
+
+                                </div>
+                                <!--Priority-->
+
+                                <div class="mb-3 ">
+
+                                    <label for="exampleInputPassword1" class="form-label"> Priority </label>
+
+                                    <select class="form-select" aria-label="Default select example">
+
+                                        <option selected>--Select--</option>
+
+                                        <option value="1">Low</option>
+
+                                        <option value="2">Medium</option>
+
+                                        <option value="3">High</option>
+
+                                        <option value="4">Critical</option>
+
+                                    </select>
+
+                                </div>
+                                <br>
+                                <br>
+                                <!--Due Date-->
+                                
+                                <div class="cs-form mb-3 ">
+
+                                    <label for="exampleInputTC" class="form-label"> Due Date</label>
+
+                                    <input type="date" class="form-control" ng-model="selectedDate">
+
+                                </div>
+                                
+                                 <!--Remainder Date-->
+
+                                <div class="cs-form mb-3">
+
+                                    <label for="exampleInputTC" class="form-label"> Remainder Date</label>
+
+                                    <input type="date" class="form-control" ng-model="selectedDate">
+
+                                </div>  
+                                <div class="form-group input-group">
+
+                                    <ng-multiselect-dropdown
+            
+                                    [placeholder]="'custom placeholder'"
+            
+                                    [settings]="dropdownSettings"
+            
+                                    [data]="dropdownList"
+            
+                                    [(ngModel)]="selectedItems"
+            
+                                    (onSelect)="onItemSelect($event)"
+            
+                                    (onSelectAll)="onSelectAll($event)">
+            
+                                  </ng-multiselect-dropdown>
+            
+                                </div>
+            
+
+                            </div>
+                        </div>
+                    
+                </div>
+                
+                
+                    
+              
+
+              
+
+            </div>
+        </div>
+    </div>
+</div>
+            

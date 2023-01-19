@@ -1,0 +1,127 @@
+<section class="ftco-section border border-dark border-5 rounded gap-3 p-3">
+    <div class="container">
+        
+        
+        <div class="row justify-content-center ">
+
+            <div class="col-md-6 text-center  mb-1">
+                <h2 class="heading-section">Accounts Details</h2>
+            </div> 
+        </div>
+        <!--MODAL-->
+        <div class="row ">
+            <div class="col-6 justify-content-start">
+                <!--CREATE-->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-fullscreen">
+                        <div class="modal-content" >
+                            <div class="modal-header" style="background-color: rgba(0, 0, 0, 0.753);">
+                                <h1 class="modal-title fs-5 text-white" id="exampleModalLabel"  >Task Registration</h1>
+                                <button type="button"  class="btn  btn-light btn-close  btn-close-white fs-5" data-bs-dismiss="modal"  aria-label="Close" ></button>
+                            </div>
+                            <div class="modal-body">
+                                <app-create-task></app-create-task>
+                            </div>
+                            <div class="modal-footer" style="background-color: rgba(0, 0, 0, 0.753);">
+                                <button type="button" class="btn  btn-dark" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-dark">Save changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Create
+                </button>
+            </div>
+            <!--File upload-->
+            <div class="col-6 d-flex justify-content-end">
+                <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">            
+                            <div class="modal-header" style="background-color: rgba(0, 0, 0, 0.753);">
+                                <h1 class="modal-title fs-5 text-white" id="exampleModalLabel1">File Upload </h1>
+                                <button type="button" class="btn  btn-light btn-close  btn-close-white fs-5" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <app-uploadacc></app-uploadacc>
+                            </div>
+                            <div class="modal-footer" style="background-color: rgba(0, 0, 0, 0.753);">
+                                <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-dark">Save changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+                    File Upload
+                </button>
+            </div>
+        </div>
+        <br>
+    
+       <!--TABLE-->
+          <div class="row-0">
+            <div class="col-12">
+                <div class="table-wrap d-flex justify-content-center align-content-center ">
+
+                    <table class="table table-striped text-white " id="myTable">
+                        <thead >
+                            <tr  style="background-color:rgba(20, 19, 19, 0.945); ">
+                                <th>TaskID</th>
+                                <th >Task Category</th>
+                                <th>Title</th>
+                                <th>Priority</th>
+                                
+                                <th>DueDate</th>
+                                <th>DueTime</th>
+                                <th> Status</th>
+                               
+
+                            </tr>
+                        </thead>
+                        
+                        <tbody>
+                         
+                            <tr >
+                                <td>TaskID</td>
+                                <td> Task Category</td>
+                                <td>Title</td>
+                                <td>Priority</td>
+                               
+                                <td>DueDate</td>
+                                
+                               
+                                <td>DueTime</td>
+                                <td>Status</td>
+                            </tr>
+                        
+                    </tbody>
+                        <!-- <tbody>
+                         
+                                <tr *ngFor="let item of empService.listEmployee">
+                                    <td>{{item.recordid}}</td>
+                                    <td>{{item.companyname}}</td>
+                                    <td>{{item.typeofcompany}}</td>
+                                    <td>{{item.emailid}}</td>
+                                    <td>{{item.companyphoneno}}</td>
+                                    <td>{{item.jobsdescription}}</td>
+                                    <td>{{item.noofbranches}}</td>
+                                    <td>{{item.branchaddress}}</td>
+                                    <td>{{item.noofemployees}}</td>
+                                    <td>{{item.companyaddress}}</td>
+                                    <td>{{item.linkedinurl}}</td>
+                                    
+                                    <td>{{item.companywebsite}}</td>
+                                    <td>{{item.status}}</td>
+  
+                                </tr>
+                            
+                        </tbody> -->
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
