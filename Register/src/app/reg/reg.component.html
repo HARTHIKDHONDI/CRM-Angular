@@ -1,0 +1,112 @@
+<section class="ftco-section border border-dark border-5 rounded gap-3 p-3">
+    <div class="container">
+        
+        
+        <div class="row justify-content-center ">
+
+            <div class="col-md-6 text-center  mb-1">
+                <h2 class="heading-section">Registration Details</h2>
+            </div> 
+        </div>
+        <!--MODAL-->
+        <div class="row ">
+            <div class="col-6 justify-content-start">
+                <!--CREATE-->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-fullscreen">
+                        <div class="modal-content">
+                            <div class="modal-header bg-dark">
+                                <h1 class="modal-title fs-5 text-white"  id="exampleModalLabel">Registration</h1>
+                                <button type="button" class="btn btn-light btn-close btn-close-white fs-5  " data-bs-dismiss="modal" aria-label="Close" (click)="closeClick()" id="add-edit-model-close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <app-add-edit-reg [reg]="reg" *ngIf="ActivateAddEditreg"></app-add-edit-reg >
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+                <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="addClick()">
+                    Create
+                </button>
+            </div>
+            <form class="example" action="/action_page.php" style="margin:auto;max-width:300px"> 
+                <input type="text" name="firstname"  placeholder="Search.." name="search2"> 
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+            <!--File upload-->
+            <!-- <div class="col-6 d-flex justify-content-end">
+                <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel1">Modal title</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <app-uploadacc></app-uploadacc> -->
+                            <!-- </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+                    File Upload
+                </button>
+            </div>-->
+        </div> 
+        <br> 
+        <div class="alert alert-success mt-3 " role="alert" id="add-success-alert">
+             Added Successfully
+         </div>
+         <div class="alert alert-success mt-3" role="alert" id="update-success-alert">
+             Updated Successfully
+        </div>
+        <div class="alert alert-success mt-3 " role="alert" id="delete-success-alert">
+             Deleted Successfully 
+        </div>
+    
+       <!--TABLE-->
+          <div class="row-0">
+            <div class="col-12">
+                <div class="table-wrap d-flex justify-content-center align-content-center ">
+
+                    <table class="table table-striped text-white " id="myTable">
+                        <thead >
+                            <tr  style="background-color:rgba(20, 19, 19, 0.945); ">
+                                <th>EmployeeID</th>
+                                <th>FirstName</th>                              
+                                <th>Email_Id</th>                                
+                                <th>Gender</th>                               
+                               <th>Type Of Work</th>
+                               <th>DOJ</th>
+                               <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <tr *ngFor="let d of   registerList">
+                            <td>{{d.employeeId}}</td>
+                            <td>{{d.firstName}}</td>                         
+                            <td>{{d.emailId}}</td>                           
+                            <td>{{d.gender}}</td>                                                                             
+                            <td>{{d.typeofwork}}</td>
+                            <td>{{d.doj}}</td>
+                            <td> 
+                                <button type="button"class="btn btn-light mr-1 me-3" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="editClick(d)">Edit </button>
+                                <button type="button" class="btn btn-light mr-1" (click)="deleteClick(d)" > Delete </button> 
+                            </td>
+                        </tr>
+                    </tbody>
+                       
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

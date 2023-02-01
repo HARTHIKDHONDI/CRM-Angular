@@ -1,0 +1,117 @@
+<div class="form-group row" >
+    <div class="col-4">
+        <label  class="form-label" >Opportunity ID</label>
+        <input type="text" class="form-control " placeholder="Opportunity ID"  id="exampleInputAI"  [(ngModel)]="id" name="aaa" #aaa="ngModel" required >
+        <p class="text-danger" *ngIf="!aaa.valid && aaa.touched">*required</p>  
+       
+
+        <label  class="form-label" >Opportunity Name</label>
+        
+        <input type="text" class="form-control " placeholder="Opportunity Name" id="exampleInputAI"  [(ngModel)]="name" name="ON" #ON="ngModel" required>
+        
+        <p class="text-danger" *ngIf="!ON.valid && ON.touched">*required</p>
+            
+        <!-- <small class="text-danger" >{{name.valid}}</small>
+        -->
+
+        <label class="form-label" >Opportunity Owner</label>
+        <select class="form-select"  aria-label="Default select example1" [(ngModel)]="owner" name="Oow" #Oow="ngModel" required>
+            <option value="Harshitha Vemula">Harshitha Vemula</option>
+            <option value="ABC">ABC</option>
+            <option value="Others">Others</option>                
+        </select>
+        <p class="text-danger" *ngIf="!Oow.valid && Oow.touched">*required</p>
+
+        <label  class="form-label" >Opportunity Workflow </label>
+        <select class="form-select" aria-label="Default select example2"   [(ngModel)]="workflow" name="oow1" #oow1="ngModel" required>
+            <option value="Sales Opportunity">Sales Opportunity</option>            
+        </select>
+        <p class="text-danger" *ngIf="!oow1.valid && oow1.touched">*required</p>
+
+
+        <label  class="form-label" >Units</label>
+        <input type="text" class="form-control " placeholder="" id="exampleInputAI"  value="Portal" [(ngModel)]="units" name="bbb" #bbb="ngModel" required>
+        <small class="text-danger" *ngIf="userForm.get('units')?.invalid && userForm.get('units')?.touched" class="text-danger">*required</small>
+        <p class="text-danger" *ngIf="!bbb.valid && bbb.touched">*required</p>
+               
+    </div>
+    <div class="col-4">
+        <label  class="form-label">Account Name</label>
+        <input type="text" class="form-control " placeholder="Account Name" id="exampleInputAI"  [(ngModel)]="accname" name="kkk" #kkk="ngModel" required>
+        <small class="text-danger" *ngIf="userForm.get('Account Name')?.invalid && userForm.get('Account Name')?.touched" class="text-danger">*required</small>
+        <p class="text-danger" *ngIf="!kkk.valid && kkk.touched">*required</p>
+
+        <label  class="form-label" >Create For</label>
+        <select class="form-select" aria-label="Default select example3"  [(ngModel)]="createfor" name="oow2" #oow2="ngModel" required >      
+            <option value="Contact">Contact</option>
+            <option value="Lead">Lead</option>
+        </select>
+        <p class="text-danger" *ngIf="!oow2.valid && oow2.touched">*required</p>
+
+        <label  class="form-label" >Opportunity Amount</label>
+        <input type="text" class="form-control" placeholder="Opportunity Amount" id="exampleInputJD" [(ngModel)]="amount" >
+        <small class="text-danger" *ngIf="userForm.get('Opportunity Amount')?.invalid && userForm.get('Opportunity Amount')?.touched" class="text-danger">*required</small>
+       
+
+        <label  class="form-label" >Expected Close Date</label>
+        <input type="date" class="form-control " [(ngModel)]="closedate"  name="ECD" #ECD="ngModel" required>
+        <p class="text-danger" *ngIf="!ECD.valid && ECD.touched">*required</p>
+    </div>
+    <div class="col-4">
+        <label  class="form-label" >Priority Type</label>
+        <select class="form-select"  aria-label="Default select example4"  [(ngModel)]="prioritytype" name="oow3" #oow3="ngModel" required >
+            <option value="Hot">Hot</option>
+            <option value="Warm">Warm</option>
+            <option value="Cold">Cold</option>
+        </select>
+        <p class="text-danger" *ngIf="!oow3.valid && oow3.touched">*required</p>
+        
+        <label  class="form-label">Opportunity Source</label>
+        <select class="form-select" aria-label="Default select example5"  [(ngModel)]="opportunitysource" name="oow4" #oow4="ngModel" required >
+            <option value="Website">Website</option>
+            <option value="Ad">Ad</option>
+            <option value="Article">Article</option>
+        </select>
+        <p class="text-danger" *ngIf="!oow4.valid && oow4.touched">*required</p>
+
+        <label  class="form-label" >Source Of Creation</label>
+        <input type="text" class="form-control " placeholder="Source of creation" id="exampleInputAI"  [(ngModel)]="sourceofcreation" name="ccc" #ccc="ngModel" required>
+        <small class="text-danger" *ngIf="userForm.get('Source Of Creation')?.invalid && userForm.get('Source Of Creation')?.touched" class="text-danger">*required</small>
+        <p class="text-danger" *ngIf="!ccc.valid && ccc.touched">*required</p>
+       
+
+        <label  class="form-label" >Product/Service</label>
+        <select class="form-select" aria-label="Default select example6" [(ngModel)]="product" name="oow5" #oow5="ngModel" required >
+            <option value="Website">Website</option>
+            <option value="Ad">Ad</option>
+            <option value="Article">Article</option>
+        </select>
+        <p class="text-danger" *ngIf="!oow5.valid && oow5.touched">*required</p>
+
+    </div>
+    
+    <div class="row mt-3">
+        <div class="col-8 vstack d-flex justify-content-center ">
+            
+            <label for="story" >Description</label>
+            <textarea id="story" name="story" rows="5" cols="170" [(ngModel)]="description" name="ddd" #ddd="ngModel" required> 
+            </textarea>
+            <p class="text-danger" *ngIf="!ddd.valid && ddd.touched">*required</p>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<br>
+<button (click)="addOpp()" *ngIf="opp.id==0" class="btn btn-primary">
+
+Add
+</button>
+<button (click)="updateOpp()" *ngIf="opp.id!=0" class="btn btn-primary">
+
+Update
+</button>

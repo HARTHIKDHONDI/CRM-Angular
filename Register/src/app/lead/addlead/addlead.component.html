@@ -1,0 +1,172 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" integrity="sha512-nMNlpuaDPrqlEls3IX/Q56H36qvBASwb3ipuo3MxeWbsQB1881ox0cRv7UPTgBlriqoynt35KjEwgGUeUXIPnw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js" integrity="sha512-2ImtlRlf2VVmiGZsjm9bEyhjGW4dU7B6TNwh/hx/iSByxNENtj3WVE6o/9Lj4TJeVXPi4bnOIMXFIJJAeufa0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<div class="container">
+    <div class="form-froup row">
+        <div class="col-4"> 
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">leadname</label>
+                    <!-- <input type="text" class="form-control" placeholder="Enter Username"  [(ngModel)]="leadname">-->
+                    <input type="text" class="form-control " placeholder="Enter Username" [(ngModel)]="leadname" name="LN" #LN="ngModel" required>
+            
+                    <p class="text-danger" *ngIf="!LN.valid && LN.touched">*required</p>
+                    <!-- <span class="text-danger" *ngIf="userForm.get('leadname')?.invalid && userForm.get('leadname')?.touched" class="text-danger">*Enter Leadname </span>  -->
+
+ 
+                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> 
+                </div>
+               
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Emailid</label>
+                    <!-- <input type="text" class="form-control" placeholder="Enter Emailid"  [(ngModel)]="emailid"> -->
+                    <input type="text" class="form-control " placeholder="Enter Emailid" [(ngModel)]="emailid" name="EM" #EM="ngModel" required>
+            
+                    <p class="text-danger" *ngIf="!EM.valid && EM.touched">*required</p>
+
+                    <!-- <span class="text-danger" *ngIf="userForm.get('Emailid')?.invalid && userForm.get('Emailid')?.touched" class="text-danger">*Enter Emailid</span> -->
+
+                     
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Phone no</label>
+                    <!-- <input type="text" class="form-control" placeholder="Enter phoneno"    [(ngModel)]="phoneno"> -->
+                    <input type="text" class="form-control " placeholder="Enter phoneno" [(ngModel)]="phoneno" name="PN" #PN="ngModel" required>
+            
+                    <p class="text-danger" *ngIf="!PN.valid && PN.touched">*required</p>
+
+
+                    <!-- <span class="text-danger" *ngIf="userForm.get('Phone no')?.invalid && userForm.get('Phone no')?.touched" class="text-danger">*Enter phoneno </span> -->
+
+                </div>
+                <div class="mb-3">
+                    <label  class="form-label">Designation </label>
+                    <!-- <select class="form-select" aria-label="Default select example" [(ngModel)]="designation">
+                        <option value="Product Based">Product Based</option>
+                        <option value="Service Based">Service Based</option>
+                        <option value="Others">Others</option>
+                        <option value="Both">Both</option>
+                      </select> -->
+                    <!-- <span class="text-danger" *ngIf="userForm.get('Designation')?.invalid && userForm.get('Designation')?.touched" class="text-danger">*Select any choice </span> -->
+                    <select class="form-select"  aria-label="Default select example1" [(ngModel)]="designation" name="DG" #DG="ngModel" required>
+                        <option value="Product Based">Product Based</option>
+                        <option value="Service Based">Service Based</option>
+                        <option value="Others">Others</option>
+                        <option value="Both">Both</option>
+                    </select>
+                    <p class="text-danger" *ngIf="!DG.valid && DG.touched">*required</p>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Work Experiance</label>
+                    <!-- <input type="text" class="form-control" placeholder="Enter experience"   [(ngModel)]="workexperiance"> -->
+                
+                    <input type="text" class="form-control " placeholder="Enter experience" [(ngModel)]="workexperiance" name="WE" #WE="ngModel" required>
+            
+                    <p class="text-danger" *ngIf="!WE.valid && WE.touched">*required</p>
+<!-- 
+                    <span class="text-danger" *ngIf="userForm.get('Work Experiance')?.invalid && userForm.get('Work Experiance')?.touched" class="text-danger">*Enter workexperience</span> -->
+
+                </div>
+               
+        
+           
+        </div> 
+        <div class="col-4">
+            
+   
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Lead source</label>
+                    <!-- <input type="email" class="form-control" placeholder="Enter source" aria-describedby="emailHelp"  [(ngModel)]="leadsource"> -->
+                    <input type="text" class="form-control " placeholder="Enter source" [(ngModel)]="leadsource" name="LS" #LS="ngModel" required>
+            
+                    <p class="text-danger" *ngIf="!LS.valid && LS.touched">*required</p>
+
+
+                    <!-- <span class="text-danger" *ngIf="userForm.get('Lead source')?.invalid && userForm.get('Lead source')?.touched" class="text-danger">*Enter Lead Source </span> -->
+
+                   <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Linkedinurl</label>
+                    <!-- <input type="url" class="form-control" placeholder="Enter url"   [(ngModel)]="linkedinurl"> -->
+                    
+
+                    <input type="text" class="form-control " placeholder="Enter url" [(ngModel)]="linkedinurl" name="UR" #UR="ngModel" required>
+            
+                    <p class="text-danger" *ngIf="!UR.valid && UR.touched">*required</p>
+                    <!-- <span class="text-danger" *ngIf="userForm.get('Linkedinurl')?.invalid && userForm.get('Linkedinurl')?.touched" class="text-danger">*Enter Linkedinurl</span> -->
+
+                </div>
+               
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Lead rating</label>
+                    <!-- <input type="text" class="form-control" placeholder="Enter rating"   [(ngModel)]="leadrating"> -->
+                    <input type="text" class="form-control " placeholder="Enter rating" [(ngModel)]="leadrating" name="LR" #LR="ngModel" required>
+            
+                    <p class="text-danger" *ngIf="!LR.valid && LR.touched">*required</p>
+<!-- 
+                    <span class="text-danger" *ngIf="userForm.get('Lead rating')?.invalid && userForm.get('Lead rating')?.touched" class="text-danger">*Enter rating</span> -->
+
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">date ofcontacted</label>
+                    <!-- <input type="date" class="form-control" [(ngModel)]="dateofcontacted"> -->
+                    
+                    <input type="date" class="form-control " [(ngModel)]="dateofcontacted"  name="DOC" #DOC="ngModel" required>
+                    <p class="text-danger" *ngIf="!DOC.valid && DOC.touched">*required</p>
+
+                    <!-- <span class="text-danger" *ngIf="userForm.get('date ofcontacted')?.invalid && userForm.get('date ofcontacted')?.touched" class="text-danger">*Enter date</span> -->
+
+                </div>
+                <!-- <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Account Status</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1">
+                </div> -->
+
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">remarks</label>
+                    <!-- <input type="email" class="form-control" placeholder="Enter remarks" aria-describedby="emailHelp" [(ngModel)]="remarks"> -->
+                    <input type="text" class="form-control " placeholder="Enter remarks" [(ngModel)]="remarks" name="RM" #RM="ngModel" required>
+            
+                    <p class="text-danger" *ngIf="!RM.valid && RM.touched">*required</p>
+                    <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Lead status </label>
+                    <!-- <select class="form-select" aria-label="Default select example" [(ngModel)]="leadstatus">
+                        <option  value=1 >Active</option>
+                        <option value=0>InActive</option>
+                       
+                      </select> -->
+                      <select class="form-select"  aria-label="Default select example1" [(ngModel)]="leadstatus" name="LS" #LS="ngModel" required>
+                        <option  value=1 >Active</option>
+                        <option value=0>InActive</option>
+                    </select>
+                    <p class="text-danger" *ngIf="!LS.valid && LS.touched">*required</p>
+
+                </div>
+                
+
+          
+        </div>
+        <button (click)="addleads()" *ngIf="lead.leadid==0" class="btn btn-primary">
+
+            submit
+          </button>
+          <button (click)="updateleads()" *ngIf="lead.leadid!=0" class="btn btn-primary">
+      
+            Update
+    </button>
+    </div>
+    
+</div>
+
+<script>
+    $(document).ready(function()
+    {
+        $(".form-select").select2({
+            placeholder:"",
+            tags:true,
+            tokenSeparation:['/',',',','," "]
+        })
+    })
+</script>

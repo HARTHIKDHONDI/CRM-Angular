@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import { SignupComponent } from './signup/signup.component';
 import { Route  } from '@angular/router';
 import {Routes,RouterModule} from '@angular/router';
+import { DatePipe } from '@angular/common';
+import{HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { SigninComponent } from './signin/signin.component';
 import { AccountsComponent } from './accounts/accounts.component';
 import { CreateAccComponent } from './create-acc/create-acc.component';
 import { UploadaccComponent } from './uploadacc/uploadacc.component';
-import { HomeMenuComponent } from './home-menu/home-menu.component';
+
 import { LayoutComponent } from './layout/layout.component';
 import { ForgotComponent } from './forgot/forgot.component';
 import { AccNameComponent } from './acc-name/acc-name.component';
@@ -23,7 +25,16 @@ import { LeadsAccComponent } from './leads-acc/leads-acc.component';
 import { CommunicationsAccComponent } from './communications-acc/communications-acc.component';
 import { TaskComponent } from './task/task.component';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
-import { CreateTaskComponent } from './create-task/create-task.component'; 
+import { CreateTaskComponent } from './task/create-task/create-task.component';
+import { RegComponent } from './reg/reg.component';
+import { AddEditRegComponent } from './reg/add-edit-reg/add-edit-reg.component'; 
+import { AccService } from './Shared/acc.service';
+import { OpportunitiesComponent } from './opportunities/opportunities.component';
+import { CreateOppComponent } from './opportunities/create-opp/create-opp.component';
+import { OppService } from './Shared/opp.service';
+import { LeadComponent } from './lead/lead.component';
+import { AddleadComponent } from './lead/addlead/addlead.component';
+
 const appRoutes:Routes=
 [
   {
@@ -58,8 +69,17 @@ const appRoutes:Routes=
         ]
       },
       {
+        path:'Opportunities',component:OpportunitiesComponent
+      },
+      {
+        path:'Leads',component:LeadComponent
+      },
+      {
         path:'Task',component:TaskComponent
-      }
+      },
+      {
+        path:'Register',component:RegComponent
+      },
     ],
 
   },
@@ -69,11 +89,8 @@ const appRoutes:Routes=
   {path:'Signup', component: SignupComponent},
   {path:'Forgot',component: ForgotComponent},
   {path:'Signin',component: SigninComponent},
+  {path:'Reg',component: RegComponent},
 ];
-   
-  
-
-
 
 @NgModule({
   declarations: [
@@ -85,7 +102,7 @@ const appRoutes:Routes=
     AccountsComponent,
      CreateAccComponent,
      UploadaccComponent,
-     HomeMenuComponent,
+     
      LayoutComponent,
      
      ForgotComponent,
@@ -95,7 +112,13 @@ const appRoutes:Routes=
      LeadsAccComponent,
      CommunicationsAccComponent,
      TaskComponent,
-     CreateTaskComponent
+     CreateTaskComponent,
+     RegComponent,
+     AddEditRegComponent,
+     OpportunitiesComponent,
+     CreateOppComponent,
+     LeadComponent,
+     AddleadComponent
      
 
   ],
@@ -106,9 +129,10 @@ const appRoutes:Routes=
     FormsModule,
     RouterModule.forRoot(appRoutes),
     NgMultiSelectDropDownModule.forRoot(),
+    HttpClientModule 
   ],
   
-  providers: [],
+  providers: [AccService,OppService,DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HomeMenuComponent } from './home-menu.component';
+import { CreateOppComponent } from './create-opp.component';
 
-describe('HomeMenuComponent', () => {
-  let component: HomeMenuComponent;
-  let fixture: ComponentFixture<HomeMenuComponent>;
+describe('CreateOppComponent', () => {
+  let component: CreateOppComponent;
+  let fixture: ComponentFixture<CreateOppComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HomeMenuComponent ]
+      declarations: [ CreateOppComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(HomeMenuComponent);
+    fixture = TestBed.createComponent(CreateOppComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
