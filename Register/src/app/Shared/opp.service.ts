@@ -1,14 +1,16 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { APImainService } from './apimain.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class OppService {
-  readonly APIUrl="https://localhost:7276/api";
+  
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient,private ApiService:APImainService) { }
+  readonly APIUrl=this.ApiService.APIUrlmain;
   getOppList():Observable<any[]>
   {
       return this.http.get<any>(this.APIUrl+"/Opportunities")

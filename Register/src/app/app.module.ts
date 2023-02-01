@@ -34,6 +34,7 @@ import { CreateOppComponent } from './opportunities/create-opp/create-opp.compon
 import { OppService } from './Shared/opp.service';
 import { LeadComponent } from './lead/lead.component';
 import { AddleadComponent } from './lead/addlead/addlead.component';
+import { APImainService } from './Shared/apimain.service';
 
 const appRoutes:Routes=
 [
@@ -132,7 +133,7 @@ const appRoutes:Routes=
     HttpClientModule 
   ],
   
-  providers: [AccService,OppService,DatePipe],
+  providers: [AccService,OppService,DatePipe,APImainService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

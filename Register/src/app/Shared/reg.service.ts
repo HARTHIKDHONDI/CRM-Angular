@@ -1,14 +1,16 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { APImainService } from './apimain.service';
 @Injectable({
   providedIn: 'root'
 })
 export class RegService {
 
-  readonly APIUrl="https://localhost:7188/api"
+  
 
-  constructor(private _http:HttpClient) { }
+  constructor(private _http:HttpClient,private ApiService:APImainService) { }
+  readonly APIUrl=this.ApiService.APIUrlmain;
 
   getRegister():Observable<any[]>{
     return this._http.get<any>(this.APIUrl+"/Registration/GetAlldata")
