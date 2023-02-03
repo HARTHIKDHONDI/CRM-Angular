@@ -12,17 +12,13 @@ export class AccService {
   constructor(private http:HttpClient,private ApiService:APImainService) { }
   readonly APIUrl=this.ApiService.APIUrlmain;
   
-  getRegList():Observable<any>{
-    return this.http.get(this.APIUrl+"/Registration/GetAlldata");
+  getmethod():Observable<any>{
+    return this.http.get(this.APIUrl+"/Account")
   }
-  addReg(val:any){
-    return this.http.post(this.APIUrl+'/Registration/Insert',val);
+  updateaccount(val:any){
+return this.http.put(this.APIUrl+"/Account/Update",val)
   }
-  updateReg(val:any){
-    return this.http.put(this.APIUrl+'/Registration/upadte',val);
-  }
-
-  deleteReg(val:any){
-    return this.http.delete(this.APIUrl+'/Registration/Delete/'+val);
+  insert(val:any){
+    return this.http.post(this.APIUrl+"/Account/Insert",val)
   }
 }

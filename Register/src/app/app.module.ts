@@ -35,6 +35,10 @@ import { OppService } from './Shared/opp.service';
 import { LeadComponent } from './lead/lead.component';
 import { AddleadComponent } from './lead/addlead/addlead.component';
 import { APImainService } from './Shared/apimain.service';
+import { ContactComponent } from './contact/contact.component';
+import { CreateConComponent } from './contact/create-con/create-con.component';
+import { NotesComponent } from './notes/notes.component';
+import { CreateNoteComponent } from './notes/create-note/create-note.component';
 
 const appRoutes:Routes=
 [
@@ -70,17 +74,23 @@ const appRoutes:Routes=
         ]
       },
       {
+        path:'Contacts',component:ContactComponent
+      },
+      {
         path:'Opportunities',component:OpportunitiesComponent
       },
       {
         path:'Leads',component:LeadComponent
       },
       {
+        path:'Notes',component:NotesComponent
+      },
+      {
         path:'Task',component:TaskComponent
       },
       {
         path:'Register',component:RegComponent
-      },
+      }
     ],
 
   },
@@ -119,7 +129,11 @@ const appRoutes:Routes=
      OpportunitiesComponent,
      CreateOppComponent,
      LeadComponent,
-     AddleadComponent
+     AddleadComponent,
+     ContactComponent,
+     CreateConComponent,
+     NotesComponent,
+     CreateNoteComponent
      
 
   ],

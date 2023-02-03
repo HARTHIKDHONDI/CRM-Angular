@@ -10,7 +10,7 @@ import { DatePipe } from '@angular/common';
   templateUrl: './create-opp.component.html',
   styleUrls: ['./create-opp.component.css']
 })
-export class CreateOppComponent  implements OnInit {
+export class CreateOppComponent   implements OnInit {
   userForm!: FormGroup;
   constructor(private route :Router,private service:OppService,private datepipe:DatePipe){
     
@@ -19,7 +19,7 @@ export class CreateOppComponent  implements OnInit {
    @Input() opp:any;
       id!:number;
       name:string="";
-     owner:string="";
+      opportunityOwner:string="";
      workflow:string="";
       accname:string="";
       amount!:number;                         
@@ -28,16 +28,16 @@ export class CreateOppComponent  implements OnInit {
       prioritytype:string="";
       opportunitysource:string="";
       description:string="";
-      sourceofcreation:string="";
-      product:string="";
-      units:string="";
+      // sourceofcreation:string="";
+      // product:string="";
+      // units:string="";
 
    
   
   ngOnInit(): void {
     this.id=this.opp.id;
     this.name=this.opp.name;
-    this.owner=this.opp.owner;
+    this.opportunityOwner=this.opp.opportunityOwner;
     this.amount=this.opp.amount;
     this.workflow=this.opp.workflow;
     this.accname=this.opp.accname;
@@ -47,9 +47,9 @@ export class CreateOppComponent  implements OnInit {
     this.prioritytype=this.opp.prioritytype;
     this.opportunitysource=this.opp.opportunitysource;
     this.description=this.opp.description;
-    this.sourceofcreation=this.opp.sourceofcreation;
-    this.product=this.opp.product;
-    this.units=this.opp.units;
+    // this.sourceofcreation=this.opp.sourceofcreation;
+    // this.product=this.opp.product;
+    // this.units=this.opp.units;
     this.userForm = new FormGroup({
       
       'email' : new FormControl(null, [Validators.required, Validators.email]),
@@ -78,10 +78,10 @@ export class CreateOppComponent  implements OnInit {
       'Priority Type' : new FormControl(null, Validators.required),
       'Opportunity Source' : new FormControl(null, Validators.required),
       'Actual End Date' : new FormControl(null, Validators.required),
-      'Description' : new FormControl(null, Validators.required),
-      'Source Of Creation' : new FormControl(null, Validators.required),
-      'Product/Service' : new FormControl(null, Validators.required),
-      'Units' : new FormControl(null, Validators.required)
+      'Description' : new FormControl(null, Validators.required)
+      // 'Source Of Creation' : new FormControl(null, Validators.required),
+      // 'Product/Service' : new FormControl(null, Validators.required),
+      // 'Units' : new FormControl(null, Validators.required)
       
       
       
@@ -92,7 +92,7 @@ export class CreateOppComponent  implements OnInit {
     var val={
     id:this.id,
     name:this.name,
-    owner:this.owner,
+    opportunityOwner:this.opportunityOwner,
     amount:this.amount,
     workflow:this.workflow,
     accname:this.accname,
@@ -100,10 +100,10 @@ export class CreateOppComponent  implements OnInit {
     closedate:this.closedate,
     prioritytype:this.prioritytype,
     opportunitysource:this.opportunitysource,
-    description:this.description,
-    sourceofcreation:this.sourceofcreation,
-    product:this.product,
-    units:this.units
+    description:this.description
+    // sourceofcreation:this.sourceofcreation,
+    // product:this.product,
+    // units:this.units
     };
     this.service.addOpportunity(val).subscribe(res=>
       {
@@ -126,7 +126,7 @@ export class CreateOppComponent  implements OnInit {
     var val={
       id:this.id,
       name:this.name,
-      owner:this.owner,
+      opportunityOwner:this.opportunityOwner,
       amount:this.amount,
       workflow:this.workflow,
       accname:this.accname,
@@ -134,10 +134,10 @@ export class CreateOppComponent  implements OnInit {
       closedate:this.closedate,
       prioritytype:this.prioritytype,
       opportunitysource:this.opportunitysource,
-      description:this.description,
-      sourceofcreation:this.sourceofcreation,
-      product:this.product,
-      units:this.units
+      description:this.description
+      // sourceofcreation:this.sourceofcreation,
+      // product:this.product,
+      // units:this.units
       };
       this.service.updateOpportunity(val).subscribe(res=>
         {

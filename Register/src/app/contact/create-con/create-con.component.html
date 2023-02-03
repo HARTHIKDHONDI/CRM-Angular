@@ -1,0 +1,104 @@
+<div class="container">
+    <div class=" form-group row d-flex justify-content-center align-content-center">
+        <div class="col-5">
+            
+
+                
+                <div class="mb-3">
+                    <label for="exampleInputAI" class="form-label">AccountName</label>
+                    <input type="PersonName" class="form-control " placeholder="accountname" [(ngModel)]="accountname" name="acc" #acc="ngModel" required>
+                    <!-- <small class="text-danger" *ngIf="Form.get('accountid')?.invalid && Form.get('accountid')?.touched" class="text-danger">*required</small> -->
+                    <p class="text-danger" *ngIf="!acc.valid && acc.touched">*required</p>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputAI" class="form-label">PersonName</label>
+                    <input type="PersonName" class="form-control " placeholder="personname"[(ngModel)]="personname" name="on" #on="ngModel" required >
+                    <!-- <small class="text-danger" *ngIf="Form.get('personname')?.invalid && Form.get('personname')?.touched" class="text-danger">*required</small> -->
+                    <p class="text-danger" *ngIf="!on.valid && on.touched">*required</p>
+
+                </div>
+               
+                <div class="mb-3">
+                    <label for="exampleInputJD" class="form-label">Email id</label>
+                    <input type="Email id" class="form-control" placeholder="Email id" [(ngModel)]="emailid" name="off" #off="ngModel" required >
+                    <!-- <small class="text-danger" *ngIf="Form.get('emailid')?.invalid && Form.get('emailid')?.touched" class="text-danger">*required</small> -->
+                    <p class="text-danger" *ngIf="!off.valid && off.touched">*required</p>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputNDB" class="form-label">Phone number  </label>
+                    <input type="NDB" class="form-control" placeholder="mobile" [(ngModel)]="mobile" name="phn" #phn="ngModel" required>
+                    <!-- <small class="text-danger" *ngIf="Form.get('mobile')?.invalid && Form.get('mobile')?.touched" class="text-danger">*required</small> -->
+                    <p class="text-danger" *ngIf="!phn.valid && phn.touched">*required</p>
+        
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputAA" class="form-label"> Designation</label>
+                    <input type="AA" class="form-control" placeholder="designation" [(ngModel)]="designation"name="des" #des="ngModel" required >
+                    <!-- <small class="text-danger" *ngIf="Form.get('designation')?.invalid && Form.get('designation')?.touched" class="text-danger">*required</small> -->
+                    <p class="text-danger" *ngIf="!des.valid && des.touched">*required</p>
+                    
+                </div>
+              
+        
+
+        </div>  
+        <div class="col-5">
+           
+
+                <div class="mb-3">
+                    <label for="exampleInputAN" class="form-label">Working Experience</label>
+                    <input type="workexperiance" placeholder="workexperiance" class="form-control" [(ngModel)]="workexperiance" name="exp" #exp="ngModel" required  >
+                    <!-- <small class="text-danger" *ngIf="Form.get('workexperiance')?.invalid && Form.get('workexperiance')?.touched" class="text-danger">*required</small> -->
+                    <p class="text-danger" *ngIf="!exp.valid && exp.touched">*required</p>
+                </div>
+
+   
+                <div class="mb-3">
+                    <label for="exampleInputAN" class="form-label">Contact Source</label>
+                    <input type="contactsource" placeholder="contactsource  " class="form-control" [(ngModel)]="contactsource" name="sou" #sou="ngModel" required >
+                    <!-- <small class="text-danger" *ngIf="Form.get('contactsource')?.invalid && Form.get('contactsource')?.touched" class="text-danger">*required</small> -->
+                    <p class="text-danger" *ngIf="!sou.valid && sou.touched">*required</p>
+                </div>
+          
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label"> Contact Type  </label>
+                    <select class="form-select" aria-label="Default select example"  placeholder="contacttype" [(ngModel)]="contacttype" name="cont" #cont="ngModel" required>
+                    
+                       
+                        <option value="Billing">Billing</option>
+                        <option value="Recruitment">Recruitment</option>
+                        
+                      </select>
+                      <p class="text-danger" *ngIf="!cont.valid && cont.touched">*required</p>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="exampleInputLU" class="form-label">LinkedIn Url</label>
+                    <input type="LU" class="form-control" placeholder="linkedinurl" [(ngModel)]="linkedinurl" name="url" #url="ngModel" required>
+                    <!-- <small class="text-danger" *ngIf="Form.get('linkedinurl')?.invalid && Form.get('linkedinurl')?.touched" class="text-danger">*required</small> -->
+                    <p class="text-danger" *ngIf="!url.valid && url.touched">*required</p>
+                </div>
+            
+                <div class="mb-3">
+                    <label class="form-label">Date of contacted  </label>
+                    <input type="date" class="form-control"  [(ngModel)]="dateofcontacted" name="co" #co="ngModel" required>
+                    <!-- <small class="text-danger" *ngIf="Form.get('dateofcontacted')?.invalid && Form.get('dateofcontacted')?.touched" class="text-danger">*required</small> -->
+                    <p class="text-danger" *ngIf="!co.valid && co.touched">*required</p>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail" class="form-label">Remarks</label>
+                    <input type="remarks" class="form-control" placeholder="remarks" [(ngModel)]="remarks" name="rem" #rem="ngModel" required>
+                    <!-- <small class="text-danger" *ngIf="Form.get('remarks')?.invalid && Form.get('remarks')?.touched" class="text-danger">*required</small> -->
+                    <p class="text-danger" *ngIf="!rem.valid && rem.touched">*required</p>
+                </div>
+       
+
+        </div>
+         <button (click)="addcontact()" *ngIf="con.recordid==0" class="btn btn-dark">
+            Add
+          </button>
+          <button (click)="updateContact()" *ngIf="con.recordid!=0" class="btn btn-dark">    
+            Update
+          </button>
+    </div>  
+</div>

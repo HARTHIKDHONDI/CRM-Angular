@@ -1,23 +1,4 @@
-.btn-colse.btn-close-white{
-    color: white !important; 
-}
-table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-  }
-  
-  td, th {
-    border: 1px solid #181717;
-    text-align: left;
-    padding: 8px;
-  }
-  
-  tr:nth-child(even) {
-    background-color: #625f5f;
-  }
-
-  #add-success-alert,
+#add-success-alert,
 #update-success-alert,
 #delete-success-alert{
     display: none;
@@ -45,5 +26,5 @@ animation-duration: 4s;
     
     50% {opacity: 1;}
     
-    100% {opacity:0;}
+    100% {opacity: 0;}
 }

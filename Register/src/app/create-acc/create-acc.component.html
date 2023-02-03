@@ -1,155 +1,113 @@
 
 <div class="container">
-    <div class="row">
+    <div class="form-group row">
         <div class="col-4">
-            <form [formGroup]="userForm">
+            
    
+            
                 <div class="mb-3">
-                    <label for="exampleInputAI" class="form-label">Account ID</label>
-                    <input type="Account ID" class="form-control " placeholder="Account ID" id="exampleInputAI" formControlName="AccountID">
-                    <small class="text-danger" *ngIf="userForm.get('AccountID')?.invalid && userForm.get('AccountID')?.touched" class="text-danger">*required</small>
+                    <label for="exampleInputEmail1" class="form-label">Accountname</label>
+                    <input  type="text"class="form-control"  name="accountname" placeholder="accountname"[(ngModel)]="accountname">
+                    <!-- <small class="text-danger" *ngIf="userForm.get('AccountName')?.invalid && userForm.get('AccountName')?.touched" class="text-danger">*Account ID is required</small> -->
+                    <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
                 </div>
                 <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label"> Type Of Account </label>
-                    <select class="form-select" aria-label="Default select example">
-                    
-                        <option selected>--Select--</option>
-                        <option value="1">Product Based</option>
-                        <option value="2">Service Based</option>
-                        <option value="3">Others</option>
-                        <option value="4">Both</option>
-                      </select>
+                    <label for="exampleInputPassword1" class="form-label">Typeofaccount</label>
+                 
+                  
+                    <input  type="text"class="form-control" name="typeofaccount" placeholder="typeofaccount"[(ngModel)]="typeofaccount">
                 </div>
                 <div class="mb-3">
-                    <label for="exampleInputJD" class="form-label">Job Description</label>
-                    <input type="Job Description" class="form-control" placeholder="Job Description" id="exampleInputJD" formControlName="JobDescription">
-                    <small class="text-danger" *ngIf="userForm.get('JobDescription')?.invalid && userForm.get('JobDescription')?.touched" class="text-danger">*required</small>
-
+                    <label for="exampleInputPassword1" class="form-label">Emailid</label>
+                    <input  type="text"class="form-control" name="emailid" placeholder="emailid"[(ngModel)]="emailid">
+                  
                 </div>
                 <div class="mb-3">
-                    <label for="exampleInputNDB" class="form-label">No Of Branches</label>
-                    <input type="NDB" class="form-control" placeholder="No Of Branches" id="exampleInputNDB" formControlName="NoOfBranches">
-                    <small class="text-danger" *ngIf="userForm.get('NoOfBranches')?.invalid && userForm.get('NoOfBranches')?.touched" class="text-danger">*required</small>
-
-        
+                    <label for="exampleInputPassword1" class="form-label">Accountphoneno</label>
+                    <input  type="text"class="form-control" name="accountphoneno" placeholder="accountphoneno"[(ngModel)]="accountphoneno">
+            
                 </div>
                 <div class="mb-3">
-                    <label for="exampleInputAA" class="form-label"> Account Address</label>
-                    <input type="AA" class="form-control" placeholder="Account Address" id="exampleInputAA" formControlName="AccountAddress">
-                    <small class="text-danger" *ngIf="userForm.get('AccountAddress')?.invalid && userForm.get('AccountAddress')?.touched" class="text-danger">*required</small>
-
+                    <label for="exampleInputPassword1" class="form-label">Primarycontact</label>
+                    <input  type="text"class="form-control" name="primarycontact" placeholder="primarycontact"[(ngModel)]="primarycontact">
                 </div>
                 <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label" >Account Owner</label>
-                    <select   class="form-select ">
-                        <option  value="1">One</option>
-                        <option  value="2">Two</option>
-                        <option value="3">Three</option>
-                        <option value="4">Four</option>
-                        <option value="5">Five</option>
-                        <option value="6">Six</option>
-                        <option value="7">Seven</option>
-                        <option value="8">Eight</option>
-                    </select>
+                    <label for="exampleInputPassword1" class="form-label" >Jobsdescription</label>
+                    <input  type="text" class="form-control"name="jobsdescription" placeholder="jobsdescription"[(ngModel)]="jobsdescription">
                 </div>
 
-            </form>
+           
         </div>  
         <div class="col-4">
-            <form [formGroup]="userForm">
+          
    
                 <div class="mb-3">
-                    <label for="exampleInputAN" class="form-label">Account Name</label>
-                    <input type="AccountName" placeholder="Account Name" class="form-control"  formControlName="AccountName" >
-                    <small class="text-danger" *ngIf="userForm.get('AccountName')?.invalid && userForm.get('AccountName')?.touched" class="text-danger">*required</small>
+                    <label for="exampleInputEmail1" class="form-label">Statustype</label>
+                    <input  type="text" class="form-control"name="statustype" placeholder="statustype"[(ngModel)]="statustype">
+                    <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
                 </div>
                 <div class="mb-3">
-                    <label for="exampleInputAPN" class="form-label">Account Phone Number</label>
-                    <input type="APN" class="form-control" placeholder="Phone Number" id="exampleInputAPN" formControlName="AccountPhoneNumber">
-                    <small class="text-danger" *ngIf="userForm.get('AccountPhoneNumber')?.invalid && userForm.get('AccountPhoneNumber')?.touched" class="text-danger">*required</small>
-
-                </div>
-                <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label"> Status Type</label>
-                    <select class="form-select" aria-label="Default select example">
-                    
-                        <option selected>--Select--</option>
-                        <option value="1">StartUp</option>
-                        <option value="2">MNC</option>
-                        
+                    <label for="exampleInputPassword1" class="form-label">Type</label>
+                    <select type="select"name="type" class="form-control" [(ngModel)]="type">
+                        <option value="product">product</option>
+                        <option value="service">service</option>
+                       
                       </select>
                 </div>
                 <div class="mb-3">
-                    <label for="exampleInputAD" class="form-label">Address Details</label>
-                    <input type="AD" class="form-control" placeholder="Address Details"id="exampleInputAD" formControlName="AccountDetails">
-                    <small class="text-danger" *ngIf="userForm.get('AccountDetails')?.invalid && userForm.get('AccountDetails')?.touched" class="text-danger">*required</small>
+                    <label for="exampleInputPassword1" class="form-label">Noofbranches</label>
+                    <input  type="text" class="form-control"name="noofbranches" placeholder="noofbranches"[(ngModel)]="noofbranches">
                 </div>
                 <div class="mb-3">
-                    <label for="exampleInputLU" class="form-label">LinkedIn Url</label>
-                    <input type="LU" class="form-control" placeholder="Url"id="exampleInputLU" formControlName="LinkedIn Url">
-                    <small class="text-danger" *ngIf="userForm.get('LinkedIn Url')?.invalid && userForm.get('LinkedIn Url')?.touched" class="text-danger">*required</small>
-
+                    <label for="exampleInputPassword1" class="form-label">Branchaddress</label>
+                    <input  type="text" class="form-control" name="branchaddress"  placeholder="branchaddress"[(ngModel)]="branchaddress">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Noofemployees</label>
+                    <input  type="text" class="form-control"name="noofemployees" placeholder="noofemployees"[(ngModel)]="noofemployees">
                 </div>
                 <!-- <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Account Status</label>
                     <input type="password" class="form-control" id="exampleInputPassword1">
                 </div> -->
-                <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">Account Status</label>
-                    <select class="form-select" aria-label="Default select example">
-                    
-                        <option selected>--Select--</option>
-                        <option value="1">Active</option>
-                        <option value="2">InActive</option>
-                        
-                      </select>
-                      
-                </div>
+                
                 
 
-            </form>
+         
         </div>
         <div class="col-4">
-            <form [formGroup]="userForm">
-   
+            
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Accountaddress</label>
+                <input  type="text" class="form-control"name="accountaddress" placeholder="accountaddress"[(ngModel)]="accountaddress">
+                  
+            </div>
                 <div class="mb-3">
-                    <label for="exampleInputEmail" class="form-label">Email ID</label>
-                    <input type="EID" class="form-control" placeholder="Email"id="exampleInputEmail" formControlName="email">
-                    <small class="text-danger" *ngIf="userForm.get('email')?.invalid && userForm.get('email')?.touched" class="text-danger">*required</small>
-
+                    <label for="exampleInputEmail1" class="form-label">Linkedinurl</label>
+                    <!-- <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"> -->
+                    <input  type="text"class="form-control" name="linkedinurl" placeholder="linkedinurl"[(ngModel)]="linkedinurl">
                 </div>
                 <div class="mb-3">
-                    <label for="exampleInputPC" class="form-label">Primary Contact</label>
-                    <input type="PC" class="form-control" placeholder="Primary Contact"id="exampleInputEmail" formControlName="Primary Contact">
-                    <small class="text-danger" *ngIf="userForm.get('Primary Contact')?.invalid && userForm.get('Primary Contact')?.touched" class="text-danger">*required</small>
-
+                    <label for="exampleInputPassword1" class="form-label">Companywebsite</label>
+                    <input  type="text" class="form-control"name="companywebsite" placeholder="companywebsite"[(ngModel)]="companywebsite">
                 </div>
                 <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">Type</label>
-                    <select class="form-select" aria-label="Default select example">
-                    
-                        <option selected>--Select--</option>
-                        <option value="1">Client</option>
-                        <option value="2">Prospect</option>
-                        <option value="3">End Client</option>
-                        <option value="4">Vendor</option>
-                        
-                      </select>
+                    <label for="exampleInputPassword1" class="form-label">Accountowner</label>
+                    <input  type="text" class="form-control" name="accountowner"  placeholder="accountowner"[(ngModel)]="accountowner">
+       
                 </div>
                 <div class="mb-3">
-                    <label for="exampleInputNOE" class="form-label">No Of Employees</label>
-                    <input type="NOE" class="form-control" placeholder="No Of Employees"id="exampleInputEmail" formControlName="NoOfEmployees">
-                    <small class="text-danger" *ngIf="userForm.get('NoOfEmployees')?.invalid && userForm.get('NoOfEmployees')?.touched" class="text-danger">*required</small>
-
+                    <label for="exampleInputPassword1" class="form-label">Accountstatus</label>
+                    <input  type="text" class="form-control"name="accountstatus" placeholder="accountstatus"[(ngModel)]="accountstatus">
                 </div>
                 <div class="mb-3">
-                    <label for="exampleInputCW" class="form-label">Company Website</label>
-                    <input type="CW" class="form-control" placeholder="Company Website"id="exampleInputEmail" formControlName="Company Website">
-                    <small class="text-danger" *ngIf="userForm.get('Company Website')?.invalid && userForm.get('Company Website')?.touched" class="text-danger">*required</small>
-
+                    <label for="exampleInputPassword1" class="form-label">insertiondate</label>
+                    <input  type="date" class="form-control"name="insertiondate" placeholder="insertiondate"[(ngModel)]="insertiondate">
                 </div>
+               
+               
 
-            </form>
+           
         </div>  
     </div>
     

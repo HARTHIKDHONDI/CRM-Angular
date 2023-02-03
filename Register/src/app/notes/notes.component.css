@@ -1,6 +1,3 @@
-.btn-colse.btn-close-white{
-    color: white !important; 
-}
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
@@ -17,7 +14,7 @@ table {
     background-color: #625f5f;
   }
 
-  #add-success-alert,
+#add-success-alert,
 #update-success-alert,
 #delete-success-alert{
     display: none;
@@ -45,5 +42,6 @@ animation-duration: 4s;
     
     50% {opacity: 1;}
     
-    100% {opacity:0;}
+    100%{opacity: 0;}
 }
+

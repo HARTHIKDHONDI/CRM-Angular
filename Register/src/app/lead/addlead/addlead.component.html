@@ -2,18 +2,18 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js" integrity="sha512-2ImtlRlf2VVmiGZsjm9bEyhjGW4dU7B6TNwh/hx/iSByxNENtj3WVE6o/9Lj4TJeVXPi4bnOIMXFIJJAeufa0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <div class="container">
-    <div class="form-froup row">
+    <div class="form-froup row d-flex justify-content-center align-content-center">
         <div class="col-4"> 
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">leadname</label>
                     <!-- <input type="text" class="form-control" placeholder="Enter Username"  [(ngModel)]="leadname">-->
-                    <input type="text" class="form-control " placeholder="Enter Username" [(ngModel)]="leadname" name="LN" #LN="ngModel" required>
+                    <input type="text" class="form-control " placeholder="Enter Leadname" [(ngModel)]="leadname" name="LN" #LN="ngModel" required>
             
                     <p class="text-danger" *ngIf="!LN.valid && LN.touched">*required</p>
                     <!-- <span class="text-danger" *ngIf="userForm.get('leadname')?.invalid && userForm.get('leadname')?.touched" class="text-danger">*Enter Leadname </span>  -->
 
  
-                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> 
+                    <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>  -->
                 </div>
                
                 <div class="mb-3">
@@ -28,7 +28,7 @@
                      
                 </div>
                 <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">Phone no</label>
+                    <label for="exampleInputPassword1" class="form-label">Phone No</label>
                     <!-- <input type="text" class="form-control" placeholder="Enter phoneno"    [(ngModel)]="phoneno"> -->
                     <input type="text" class="form-control " placeholder="Enter phoneno" [(ngModel)]="phoneno" name="PN" #PN="ngModel" required>
             
@@ -48,10 +48,11 @@
                       </select> -->
                     <!-- <span class="text-danger" *ngIf="userForm.get('Designation')?.invalid && userForm.get('Designation')?.touched" class="text-danger">*Select any choice </span> -->
                     <select class="form-select"  aria-label="Default select example1" [(ngModel)]="designation" name="DG" #DG="ngModel" required>
-                        <option value="Product Based">Product Based</option>
-                        <option value="Service Based">Service Based</option>
-                        <option value="Others">Others</option>
-                        <option value="Both">Both</option>
+                        <option value="Manger">Manger</option>
+                        <option value="HR">HR</option>
+                        <option value="CEO">CEO</option>
+                        <option value="Trainer">Trainer</option>
+                        <option value="Developer">Developer</option>
                     </select>
                     <p class="text-danger" *ngIf="!DG.valid && DG.touched">*required</p>
                 </div>
@@ -100,15 +101,22 @@
                 <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Lead rating</label>
                     <!-- <input type="text" class="form-control" placeholder="Enter rating"   [(ngModel)]="leadrating"> -->
-                    <input type="text" class="form-control " placeholder="Enter rating" [(ngModel)]="leadrating" name="LR" #LR="ngModel" required>
+                    <!-- <input type="text" class="form-control " placeholder="Enter rating" [(ngModel)]="leadrating" name="LR" #LR="ngModel" required>
             
+                    <p class="text-danger" *ngIf="!LR.valid && LR.touched">*required</p> -->
+<select class="form-select"  aria-label="Default select example1" [(ngModel)]="leadrating" name="LR" #LR="ngModel" required>
+                        <option value="Warm">Warm</option>
+                        <option value="Cold">Cold</option>
+                        <option value="CHotEO">Hot</option>
+                        <option value="Junk">Junk</option>
+                        
+                    </select>
                     <p class="text-danger" *ngIf="!LR.valid && LR.touched">*required</p>
-<!-- 
-                    <span class="text-danger" *ngIf="userForm.get('Lead rating')?.invalid && userForm.get('Lead rating')?.touched" class="text-danger">*Enter rating</span> -->
+                    <!-- <span class="text-danger" *ngIf="userForm.get('Lead rating')?.invalid && userForm.get('Lead rating')?.touched" class="text-danger">*Enter rating</span>  -->
 
                 </div>
                 <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">date ofcontacted</label>
+                    <label for="exampleInputPassword1" class="form-label">Date Of Contacted</label>
                     <!-- <input type="date" class="form-control" [(ngModel)]="dateofcontacted"> -->
                     
                     <input type="date" class="form-control " [(ngModel)]="dateofcontacted"  name="DOC" #DOC="ngModel" required>
@@ -123,7 +131,7 @@
                 </div> -->
 
                 <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">remarks</label>
+                    <label for="exampleInputEmail1" class="form-label">Remarks</label>
                     <!-- <input type="email" class="form-control" placeholder="Enter remarks" aria-describedby="emailHelp" [(ngModel)]="remarks"> -->
                     <input type="text" class="form-control " placeholder="Enter remarks" [(ngModel)]="remarks" name="RM" #RM="ngModel" required>
             
@@ -131,7 +139,7 @@
                     <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
                 </div>
                 <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">Lead status </label>
+                    <label for="exampleInputPassword1" class="form-label">Lead Status </label>
                     <!-- <select class="form-select" aria-label="Default select example" [(ngModel)]="leadstatus">
                         <option  value=1 >Active</option>
                         <option value=0>InActive</option>

@@ -15,7 +15,7 @@
         -->
 
         <label class="form-label" >Opportunity Owner</label>
-        <select class="form-select"  aria-label="Default select example1" [(ngModel)]="owner" name="Oow" #Oow="ngModel" required>
+        <select class="form-select"  aria-label="Default select example1" [(ngModel)]="opportunityOwner" name="Oow" #Oow="ngModel" required>
             <option value="Harshitha Vemula">Harshitha Vemula</option>
             <option value="ABC">ABC</option>
             <option value="Others">Others</option>                
@@ -29,10 +29,10 @@
         <p class="text-danger" *ngIf="!oow1.valid && oow1.touched">*required</p>
 
 
-        <label  class="form-label" >Units</label>
+        <!-- <label  class="form-label" >Units</label>
         <input type="text" class="form-control " placeholder="" id="exampleInputAI"  value="Portal" [(ngModel)]="units" name="bbb" #bbb="ngModel" required>
         <small class="text-danger" *ngIf="userForm.get('units')?.invalid && userForm.get('units')?.touched" class="text-danger">*required</small>
-        <p class="text-danger" *ngIf="!bbb.valid && bbb.touched">*required</p>
+        <p class="text-danger" *ngIf="!bbb.valid && bbb.touched">*required</p> -->
                
     </div>
     <div class="col-4">
@@ -74,19 +74,19 @@
         </select>
         <p class="text-danger" *ngIf="!oow4.valid && oow4.touched">*required</p>
 
-        <label  class="form-label" >Source Of Creation</label>
+        <!-- <label  class="form-label" >Source Of Creation</label>
         <input type="text" class="form-control " placeholder="Source of creation" id="exampleInputAI"  [(ngModel)]="sourceofcreation" name="ccc" #ccc="ngModel" required>
         <small class="text-danger" *ngIf="userForm.get('Source Of Creation')?.invalid && userForm.get('Source Of Creation')?.touched" class="text-danger">*required</small>
-        <p class="text-danger" *ngIf="!ccc.valid && ccc.touched">*required</p>
+        <p class="text-danger" *ngIf="!ccc.valid && ccc.touched">*required</p> -->
        
 
-        <label  class="form-label" >Product/Service</label>
+        <!-- <label  class="form-label" >Product/Service</label>
         <select class="form-select" aria-label="Default select example6" [(ngModel)]="product" name="oow5" #oow5="ngModel" required >
             <option value="Website">Website</option>
             <option value="Ad">Ad</option>
             <option value="Article">Article</option>
         </select>
-        <p class="text-danger" *ngIf="!oow5.valid && oow5.touched">*required</p>
+        <p class="text-danger" *ngIf="!oow5.valid && oow5.touched">*required</p> -->
 
     </div>
     

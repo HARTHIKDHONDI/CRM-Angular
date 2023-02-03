@@ -24,7 +24,7 @@ export class AddleadComponent implements OnInit{
    workexperiance!:number;
    leadsource:string="";
    linkedinurl:string="";
-   leadrating!:number;
+   leadrating:string="";
    dateofcontacted:any;
    remarks:string="";
    leadstatus!:number;

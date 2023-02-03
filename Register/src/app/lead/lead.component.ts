@@ -31,7 +31,7 @@ this.lead={
   workexperiance:0,
   leadsource:"",
   linkedinurl:"",
-  leadrating:0,
+  leadrating:"",
   dateofcontacted:"",
   remarks:"",
   leadstatus:0

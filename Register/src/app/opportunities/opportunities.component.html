@@ -104,7 +104,7 @@
                             <tr  style="background-color:rgba(20, 19, 19, 0.945); ">
                                 <th>id</th>
                                 <th >name</th>
-                                <th>owner</th>
+                                <th>opportunityOwner</th>
                                 <th>workflow</th>
                                 <th >accname</th>
                                 <th >createfor</th>
@@ -112,9 +112,9 @@
                                 <th >prioritytype</th>
                                 <th>opportunitysource</th>
                                 <th>description</th>
-                                <th >sourceofcreation</th>
+                                <!-- <th >sourceofcreation</th>
                                 <th>product</th>
-                                <th>units</th>
+                                <th>units</th> -->
                                 <th>options</th>
                             </tr>
                         </thead>
@@ -124,7 +124,7 @@
                             <tr *ngFor="let Item of oppList" >
                                 <td>{{Item.id}}</td>
                                 <td>{{Item.name}}</td>
-                                <td>{{Item.owner}}</td>
+                                <td>{{Item.opportunityOwner}}</td>
                                 <td>{{Item.workflow}}</td>
                                 <td>{{Item.accname}}</td>
                                 <td>{{Item.createfor}}</td>
@@ -132,9 +132,9 @@
                                 <td>{{Item.prioritytype}}</td>
                                 <td>{{Item.opportunitysource}}</td>
                                 <td>{{Item.description}}</td>
-                                <td>{{Item.sourceofcreation}}</td>
+                                <!-- <td>{{Item.sourceofcreation}}</td>
                                 <td>{{Item.product}}</td>
-                                <td>{{Item.units}}</td>
+                                <td>{{Item.units}}</td> -->
                                 <td>
                                     <button type="button"class="btn btn-light mr-1 me-3" data-bs-toggle="modal" data-bs-target="#exampleModal"
                                     (click)="editClick(Item)"

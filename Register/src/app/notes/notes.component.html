@@ -1,0 +1,121 @@
+<section class="ftco-section border border-dark border-5 rounded gap-3 p-3">
+    <div class="container">
+        
+        
+        <div class="row justify-content-center ">
+
+            <div class="col-md-6 text-center  mb-1">
+                <h2 class="heading-section">NotePad</h2>
+            </div> 
+        </div>
+        <!--MODAL-->
+        <div class="row ">
+            <div class="col-6 justify-content-start">
+                <!--CREATE-->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-fullscreen">
+                        <div class="modal-content" >
+                            <div class="modal-header" style="background-color: rgba(0, 0, 0, 0.753);">
+                                <h1 class="modal-title fs-5 text-white" id="exampleModalLabel"  >Notes</h1>
+                                <button type="button"  class="btn  btn-light btn-close  btn-close-white fs-5" data-bs-dismiss="modal"  aria-label="Close" (click)="closeClick()" id="add-edit-model-close" ></button>
+                            </div>
+                            <div class="modal-body">
+                                <app-create-note [Note]="Note" *ngIf="ActivateAddEditNote"></app-create-note>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+                <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="addClick()">
+                    <i class="fas fa-file-alt"></i>
+                </button>
+            </div>
+            <!--File upload-->
+            <form class="example" action="/action_page.php" style="margin:auto;max-width:300px">
+                <input type="text"  placeholder="Search.." name="search2">
+                <button type="submit"><i class="fa fa-search"></i></button> 
+              </form>
+
+            
+            
+            
+        </div>
+        <br>
+            <div class="alert alert-success mt-3 " role="alert" id="add-success-alert">
+            Added Successfully
+            </div>
+            
+            <div class="alert alert-success mt-3" role="alert" id="update-success-alert">
+              Updated Successfully
+            </div>
+            
+            <div class="alert alert-success mt-3 " role="alert" id="delete-success-alert">
+              Deleted Successfully
+            </div>
+        
+    
+       <!--TABLE-->
+          <div class="row-0">
+            <div class="col-12">
+                <div class="table-wrap d-flex justify-content-center align-content-center ">
+
+                    <table class="table table-striped text-white " id="myTable">      
+                        <thead >
+                            <tr  style="background-color:rgba(20, 19, 19, 0.945); ">
+                                
+                                    <th>SNo</th>
+                                    <th>Type</th>
+                                    <th>Notify</th>
+                                    <th>Description</th>
+                                    <th>Actions</th>
+                            </tr>
+                        </thead>
+                        
+                        <tbody>
+                            <tr *ngFor="let i of newdata ">
+                                <td>{{i.sno}}</td>
+                                <td>{{i.type}}</td>
+                                <td >{{i.notify}}</td>
+                                <td>{{i.description}}</td>
+                                <td>
+                                    <button type="button"class="btn btn-light mr-1 me-3" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                    (click)="editClick(i)"
+                                    data-backdrop="static" data-keyboard="false">
+                                        Edit
+                                    </button>
+                                    <button type="button" class="btn btn-light mr-1" 
+                                    (click)="deleteClick(i)"
+                                    >
+                                        Delete
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <!-- <tbody>
+                         
+                                <tr *ngFor="let item of empService.listEmployee">
+                                    <td>{{item.recordid}}</td>
+                                    <td>{{item.companyname}}</td>
+                                    <td>{{item.typeofcompany}}</td>
+                                    <td>{{item.emailid}}</td>
+                                    <td>{{item.companyphoneno}}</td>
+                                    <td>{{item.jobsdescription}}</td>
+                                    <td>{{item.noofbranches}}</td>
+                                    <td>{{item.branchaddress}}</td>
+                                    <td>{{item.noofemployees}}</td>
+                                    <td>{{item.companyaddress}}</td>
+                                    <td>{{item.linkedinurl}}</td>
+                                    
+                                    <td>{{item.companywebsite}}</td>
+                                    <td>{{item.status}}</td>
+  
+                                </tr>
+                            
+                        </tbody> -->
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -5,7 +5,7 @@
         <div class="row justify-content-center ">
 
             <div class="col-md-6 text-center  mb-1">
-                <h2 class="heading-section">Accounts Details</h2>
+                <h2 class="heading-section">ADD ACCOUNTS</h2>
             </div> 
         </div>
         <!--MODAL-->
@@ -16,39 +16,38 @@
                     <div class="modal-dialog modal-fullscreen">
                         <div class="modal-content" >
                             <div class="modal-header" style="background-color: rgba(0, 0, 0, 0.753);">
-                                <h1 class="modal-title fs-5 text-white" id="exampleModalLabel"  >Accounts Registration</h1>
-                                <button type="button"  class="btn  btn-light btn-close  btn-close-white fs-5" data-bs-dismiss="modal"  aria-label="Close" ></button>
+                                <h1 class="modal-title fs-5 text-white" id="exampleModalLabel"  >Accounts</h1>
+                                <button type="button"  class="btn  btn-light btn-close  btn-close-white fs-5" data-bs-dismiss="modal"  aria-label="Close" (click)="closeClick()" id="add-edit-model-close" ></button>
                             </div>
                             <div class="modal-body">
-                                <app-create-acc></app-create-acc>
+                                <app-create-acc [account]="account" *ngIf="Activatesubmitacc"></app-create-acc>
+                                
                             </div>
-                            <div class="modal-footer" style="background-color: rgba(0, 0, 0, 0.753);">
-                                <button type="button" class="btn  btn-dark" data-bs-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-dark">Save changes</button>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>
                 
-                <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    Create
+                <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="addclick()">
+                    <!-- <i class="fas fa-file-alt"></i> -->Create
                 </button>
             </div>
             <!--File upload-->
             <div class="col-6 d-flex justify-content-end">
                 <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content">            
-                            <div class="modal-header" style="background-color: rgba(0, 0, 0, 0.753);">
-                                <h1 class="modal-title fs-5 text-white" id="exampleModalLabel1">File Upload </h1>
-                                <button type="button" class="btn  btn-light btn-close  btn-close-white fs-5" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel1">Modal title</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
                                 <app-uploadacc></app-uploadacc>
                             </div>
-                            <div class="modal-footer" style="background-color: rgba(0, 0, 0, 0.753);">
-                                <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-dark">Save changes</button>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                               <input type="submit" class="btn btn-primary"value="Save changes"/>
+                              
                             </div>
                         </div>
                     </div>
@@ -59,7 +58,23 @@
                 </button>
             </div>
         </div>
+
+            
+            
+            
+    
         <br>
+        <div class="alert alert-success mt-3 " role="alert" id="add-success-alert">
+            Added Successfully
+            </div>
+            
+            <div class="alert alert-success mt-3" role="alert" id="update-success-alert">
+              Updated Successfully
+            </div>
+            
+            <div class="alert alert-success mt-3 " role="alert" id="delete-success-alert">
+              Deleted Successfully
+    </div>
     
        <!--TABLE-->
           <div class="row-0">
@@ -69,56 +84,58 @@
                     <table class="table table-striped text-white " id="myTable">
                         <thead >
                             <tr  style="background-color:rgba(20, 19, 19, 0.945); ">
-                                <th>Record_Id</th>
+                                <th>AccountId</th>
                                 <th >Account Name</th>
-                                <th>Company Type</th>
+                                <th>Account Type</th>
                                 <th>Email_Id</th>
+                                 <th>Account PhNumber</th>
+                                 <th>Primarycontact</th> 
+                                <th>Job Description</th>
                                 
-                                <th>Linkedin URL</th>
+                                <th>Statustype</th>
+                                <th>Type</th>
                                
-                                <th> Status</th>
+                              
+                                <th>Linkedin URL</th>
+                                 <th>Company Website</th>
+                                 <th>AccountStatus</th> 
+                                <th> Action</th>
+                                
+                              
                                
 
                             </tr>
                         </thead>
                         
-                        <tbody>
+                       
+                        <tbody style="color:black">
                          
-                            <tr >
-                                <td>recordid</td>
-                                <td routerLink="/AccName"><b>accountname</b></td>
-                                <td>typeofcompany</td>
-                                <td>emailid</td>
-                               
-                                <td>linkedinurl</td>
-                                
-                               
-                                <td>status</td>
-
-                            </tr>
-                        
-                    </tbody>
-                        <!-- <tbody>
-                         
-                                <tr *ngFor="let item of empService.listEmployee">
-                                    <td>{{item.recordid}}</td>
-                                    <td>{{item.companyname}}</td>
-                                    <td>{{item.typeofcompany}}</td>
+                                 <tr *ngFor="let item of list">
+                                    <td>{{item.accountid}}</td>
+                                    <td>{{item.accountname}}</td>
+                                    <td>{{item.typeofaccount}}</td>
                                     <td>{{item.emailid}}</td>
-                                    <td>{{item.companyphoneno}}</td>
+                                    <td>{{item.accountphoneno}}</td>
+                                    <td>{{item.primarycontact}}</td>
                                     <td>{{item.jobsdescription}}</td>
-                                    <td>{{item.noofbranches}}</td>
-                                    <td>{{item.branchaddress}}</td>
-                                    <td>{{item.noofemployees}}</td>
-                                    <td>{{item.companyaddress}}</td>
+                                    <td>{{item.statustype}}</td>
+                                    <td>{{item.type}}</td>                                                                                                     
                                     <td>{{item.linkedinurl}}</td>
-                                    
                                     <td>{{item.companywebsite}}</td>
-                                    <td>{{item.status}}</td>
+                                   
+                                    <td>{{item.accountstatus}}</td>
+                                  
+                                    <td>
+                                        <button type="button"class="btn btn-light mr-1 me-3" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                        (click)="editclick(item)"
+                                        data-backdrop="static" data-keyboard="false"id="btn">
+                                            Edit
+                                    </button>                                        
+                                    </td>
   
-                                </tr>
-                            
-                        </tbody> -->
+                                </tr> 
+                             
+                        </tbody>
                     </table>
                 </div>
             </div>

@@ -1,0 +1,78 @@
+<div class="container-fluid card card-body border border-dark border-5  rounded" >
+    <div><h3 class="d-flex justify-content-center">Notes</h3></div>
+<form  class="form-froup">
+    <!-- <h6 >SNO:</h6>
+
+    <input type="text" name="sno"   placeholder="sno"  [(ngModel)]="sno" ><br/><br>
+    -->
+                        <h6 >Type:</h6>
+
+  <!-- <input type="text" name="type"   placeholder="type"  [(ngModel)]="type" ><br/><br> -->
+                      
+                       <!-- <input type="text" class="form-control " placeholder="type" [(ngModel)]="type" name="TY" #TY="ngModel" required>
+            
+                       <p class="text-danger" *ngIf="!TY.valid && TY.touched">*required</p>
+ -->
+
+
+                       <div class="mb-3">
+                       
+                       
+                        <select class="form-select"  aria-label="Default select example1"  [(ngModel)]="type" name="TY" #TY="ngModel" required >
+                            <option value="Call">Call</option>
+                            <option value="Notes">Notes</option>
+                            <option value="Meeting">Meeting</option>
+                            <option value="Others">Others</option>
+                        </select>
+                        <p class="text-danger" *ngIf="!TY.valid && TY.touched">*required</p>
+  
+                    </div>
+  <!-- <input type="text" name="notify"  placeholder="notify"   [(ngModel)]="notify"> <br/><br> -->
+  <h6>Notify:</h6>
+  <!-- <input type="text" class="form-control " placeholder="notify"  [(ngModel)]="notify" name="NF" #NF="ngModel" required> -->
+  <select class="form-select"  aria-label="Default select example1"  [(ngModel)]="notify" name="NF" #NF="ngModel" required>
+    <option value="Call">sreekanth kota</option>
+    <option value="Notes">vinay</option>
+    <option value="Meeting">kaja moin</option>
+    <option value="Others">Others</option>
+</select>
+            
+  <p class="text-danger" *ngIf="!NF.valid && NF.touched">*required</p>
+  <!-- <div class="container text-center">
+    <ng-multiselect-dropdown
+      name="type" 
+     [placeholder]="'custom placeholder'"
+     [settings]="dropdownSettings"
+    [data]="dropdownList"
+    [(ngModel)]="selectedItems"
+    (onSelect)="onItemSelect($event)"
+    (onSelectAll)="onSelectAll($event)">
+  </ng-multiselect-dropdown></div> -->
+
+  
+  <h6>Description</h6>
+  <div class="form-group shadow-textarea">
+
+    
+    <textarea name="ds" class="form-control z-depth-1" id="exampleFormControlTextarea6" rows="3" placeholder="Write something here..." [(ngModel)]="description" #ds="ngModel" required></textarea>
+    <p class="text-danger" *ngIf="!ds.valid && ds.touched">*required</p>
+  </div>
+  <br>
+
+<!-- file upload -->
+  <!-- <input class="ng-hide" id="input-file-id" multiple type="file" />
+<label for="input-file-id" class="md-button md-raised md-primary"></label> -->
+
+  <div class="d-flex justify-content-center rounded-">
+
+  <!-- <input type="text"   placeholder="description"  ngModel> <br/><br> -->
+  <button (click)="addNotes()" *ngIf="Note.sno==0" class="btn btn-primary">
+
+    Add
+  </button>
+  <button (click)="updateNotes()" *ngIf="Note.sno!=0" class="btn btn-primary">
+
+    Update
+</button>
+  </div>
+</form>

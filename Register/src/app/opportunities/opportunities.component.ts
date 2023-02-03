@@ -27,7 +27,7 @@ export class OpportunitiesComponent  implements OnInit {
     this.opp={
       id:0,
       name:"",
-      owner:"",
+      opportunityOwner:"",
       workflow:"",
       accname:"",
       amount:"",             
