@@ -1,3 +1,10 @@
+.text-org{
+  color: rgb(255, 166, 0);
+}
+.btn-org{
+  background-color:rgb(255, 166, 0);
+}
+
 @media (min-width: 1025px) {
     .h-custom {
     height: 130vh !important;
@@ -15,13 +22,13 @@
     
     .gradient-custom-2 {
     /* fallback for old browsers */
-    background: #a1c4fd;
+    /* background: #a1c4fd; */
     
     /* Chrome 10-25, Safari 5.1-6 */
     background: -webkit-linear-gradient(to right, rgb(22, 22, 22), rgba(237, 241, 243, 1));
     
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background: linear-gradient(to right, rgb(22, 22, 22), rgb(237, 241, 243))
+    /* background: linear-gradient(to right, rgb(255, 166, 0), rgba(255, 166, 0, 0.261)) */
     }
     
     .bg-indigo {

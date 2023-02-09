@@ -109,6 +109,12 @@
 
            
         </div>  
+        <button (click)="addaccounts()" *ngIf="account.accountid==0" class="btn btn-org">
+            <b>Add</b>
+          </button>
+          <button (click)="updateaccounts()" *ngIf="account.accountid!=0" class="btn btn-org">    
+            <b>Update</b>
+          </button>
     </div>
     
 </div>

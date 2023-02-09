@@ -90,7 +90,7 @@
 
     </div>
     
-    <div class="row mt-3">
+    <div class="row mt-3 mb-3">
         <div class="col-8 vstack d-flex justify-content-center ">
             
             <label for="story" >Description</label>
@@ -100,18 +100,18 @@
 
         </div>
     </div>
+   
+    <button (click)="addOpp()" *ngIf="opp.id==0" class="btn btn-org">
+
+        Add
+    </button>
+    <button (click)="updateOpp()" *ngIf="opp.id!=0" class="btn btn-org">
+
+        Update
+    </button>
 </div>
 
 
 
 
 
-<br>
-<button (click)="addOpp()" *ngIf="opp.id==0" class="btn btn-primary">
-
-Add
-</button>
-<button (click)="updateOpp()" *ngIf="opp.id!=0" class="btn btn-primary">
-
-Update
-</button>

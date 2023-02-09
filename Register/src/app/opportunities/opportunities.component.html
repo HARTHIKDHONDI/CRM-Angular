@@ -1,23 +1,23 @@
-<section class="ftco-section border border-dark border-5 rounded gap-3 p-3">
+<section class="ftco-section gap-3 p-3">
     <div class="container">
         
         
         <div class="row justify-content-center ">
 
             <div class="col-md-6 text-center  mb-1">
-                <h2 class="heading-section">Opportunities</h2>
+                <h2 class="heading-section" style="background-color: rgb(255, 165, 0);color: rgb(33, 26, 116);">Opportunities</h2>
             </div> 
         </div>
         <!--MODAL-->
         <div class="row ">
-            <div class="col-6 justify-content-start">
+            <div class="col d-flex justify-content-end">
                 <!--CREATE-->
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-fullscreen">
                         <div class="modal-content">
-                            <div class="modal-header" style="background-color: rgba(0, 0, 0, 0.753);">
+                            <div class="modal-header" style="background-color: rgba(33, 26, 116, 0.755)">
                                 <h1 class="modal-title fs-5 text-white" id="exampleModalLabel">Opportunities Registration</h1>
-                                <button type="button"  class="btn  btn-light btn-close  btn-close-white fs-5" data-bs-dismiss="modal"  aria-label="Close" (click)="closeClick()" id="create-opp-model-close"></button>
+                                <button type="button"  class="btn   btn-close  btn-close-white fs-5" data-bs-dismiss="modal"  aria-label="Close" (click)="closeClick()" id="create-opp-model-close"></button>
                             </div>
                             <div class="modal-body">
                                 <app-create-opp [opp]="opp" *ngIf="ActivteOPP"></app-create-opp>
@@ -27,32 +27,32 @@
                     </div>
                 </div>
                 
-                <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="addClick()" >
-                    Add Opportunity
+                <button type="button" class="btn btn-dark me-3" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="addClick()" style="background-color: rgb(33, 26, 116)">
+                    <i class="fa fa-plus"></i>
                 </button>
-            </div>
+            <!-- </div> -->
             <!--File upload-->
-            <div class="col-6 d-flex justify-content-end">
+            <!-- <div class="col-6 d-flex justify-content-end"> -->
                 <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">            
-                            <div class="modal-header" style="background-color: rgba(0, 0, 0, 0.753);">
+                            <div class="modal-header" style="background-color: rgba(33, 26, 116, 0.755);">
                                 <h1 class="modal-title fs-5 text-white" id="exampleModalLabel1">File Upload </h1>
-                                <button type="button" class="btn  btn-light btn-close  btn-close-white fs-5" data-bs-dismiss="modal" aria-label="Close"></button>
+                                <button type="button" class="btn   btn-close  btn-close-white fs-5" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
                                 <app-uploadacc></app-uploadacc>
                             </div>
-                            <div class="modal-footer" style="background-color: rgba(0, 0, 0, 0.753);">
-                                <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-dark">Save changes</button>
+                            <div class="modal-footer" style="background-color: rgba(33, 26, 116, 0.755);">
+                                <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-light">Save changes</button>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal1">
-                    File Upload
+                <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal1" style="background-color: rgb(33, 26, 116)">
+                    <i class="fa fa-upload"></i>
                 </button>
             </div>
         </div>
@@ -73,86 +73,62 @@
           <div class="row-0">
             <div class="col-12">
                 <div class="table-wrap d-flex justify-content-center align-content-center ">
+                    <div class="table-responsive">
+                        <table class="table table-striped  " id="myTable">
+                            <thead class="text-white">
+                                <tr  style="background-color:rgb(33, 26, 116)">
+                                    <th>Id</th>
+                                    <th >Name</th>
+                                    <th>Opportunity Owner</th>
+                                    <th>Workflow</th>
+                                    <th >Account Name</th>
+                                    <th >Create For</th>
+                                    <th>Close Date</th>
+                                    <th >Priority Type</th>
+                                    <th>Opportunity Source</th>
+                                    <th>Description</th>
+                                    <!-- <th >sourceofcreation</th>
+                                    <th>product</th>
+                                    <th>units</th> -->
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            
+                            <tbody>
+                            
+                                <tr *ngFor="let Item of oppList" >
+                                    <td>{{Item.id}}</td>
+                                    <td>{{Item.name}}</td>
+                                    <td>{{Item.opportunityOwner}}</td>
+                                    <td>{{Item.workflow}}</td>
+                                    <td>{{Item.accname}}</td>
+                                    <td>{{Item.createfor}}</td>
+                                    <td>{{Item.closedate}}</td>
+                                    <td>{{Item.prioritytype}}</td>
+                                    <td>{{Item.opportunitysource}}</td>
+                                    <td>{{Item.description}}</td>
+                                    <!-- <td>{{Item.sourceofcreation}}</td>
+                                    <td>{{Item.product}}</td>
+                                    <td>{{Item.units}}</td> -->
+                                    <td>
+                                        <button type="button"class="btn btn-light mr-1 me-3 mb-3" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                        (click)="editClick(Item)"
+                                        >
+                                            Edit
+                                        </button>
+                                        <button type="button" class="btn btn-light mr-1" 
+                                        (click)="deleteClick(Item)"
+                                        >
+                                            Delete
+                                        </button>
+                                    </td>
 
-                    <!-- <table class="table table-striped text-white " id="myTable">
-                        <thead >
-                            <tr  style="background-color:rgba(20, 19, 19, 0.945); ">
-                                <th>Open</th>
-                                <th >Inprogress</th>
-                                <th>Closeout</th>
-                                
-                               
-
-                            </tr>
-                        </thead>
+                                </tr>
+                            
+                        </tbody>
                         
-                        <tbody>
-                         
-                            <tr >
-                                <td>Open</td>
-                                <td>Inprogress</td>
-                                <td>Closeout</td>
-                                
-
-                            </tr>
-                        
-                    </tbody>
-                       
-                    </table> -->
-                    <table class="table table-striped  " id="myTable">
-                        <thead class="text-white">
-                            <tr  style="background-color:rgba(20, 19, 19, 0.945); ">
-                                <th>id</th>
-                                <th >name</th>
-                                <th>opportunityOwner</th>
-                                <th>workflow</th>
-                                <th >accname</th>
-                                <th >createfor</th>
-                                <th>closedate</th>
-                                <th >prioritytype</th>
-                                <th>opportunitysource</th>
-                                <th>description</th>
-                                <!-- <th >sourceofcreation</th>
-                                <th>product</th>
-                                <th>units</th> -->
-                                <th>options</th>
-                            </tr>
-                        </thead>
-                        
-                        <tbody>
-                         
-                            <tr *ngFor="let Item of oppList" >
-                                <td>{{Item.id}}</td>
-                                <td>{{Item.name}}</td>
-                                <td>{{Item.opportunityOwner}}</td>
-                                <td>{{Item.workflow}}</td>
-                                <td>{{Item.accname}}</td>
-                                <td>{{Item.createfor}}</td>
-                                <td>{{Item.closedate}}</td>
-                                <td>{{Item.prioritytype}}</td>
-                                <td>{{Item.opportunitysource}}</td>
-                                <td>{{Item.description}}</td>
-                                <!-- <td>{{Item.sourceofcreation}}</td>
-                                <td>{{Item.product}}</td>
-                                <td>{{Item.units}}</td> -->
-                                <td>
-                                    <button type="button"class="btn btn-light mr-1 me-3" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                                    (click)="editClick(Item)"
-                                    data-backdrop="static" data-keyboard="false">
-                                        Edit
-                                    </button>
-                                    <button type="button" class="btn btn-light mr-1" 
-                                    (click)="deleteClick(Item)"
-                                    >
-                                        Delete
-                                    </button>
-                                
-
-                            </tr>
-                        
-                    </tbody>
-                       
-                    </table> 
+                        </table> 
+                    </div>
                     
                 </div>
             </div>

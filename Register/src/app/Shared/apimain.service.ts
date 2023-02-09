@@ -6,5 +6,5 @@ import { Injectable } from '@angular/core';
 export class APImainService {
 
   constructor() { }
-  readonly APIUrlmain="https://localhost:7188/api";
+  readonly APIUrlmain="https://localhost:44300/api";
 }

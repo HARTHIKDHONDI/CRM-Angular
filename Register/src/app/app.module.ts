@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SignupComponent } from './signup/signup.component';
+
 import { Route  } from '@angular/router';
 import {Routes,RouterModule} from '@angular/router';
 import { DatePipe } from '@angular/common';
@@ -13,7 +13,7 @@ import { HomeComponent } from './home/home.component';
 import { SigninComponent } from './signin/signin.component';
 import { AccountsComponent } from './accounts/accounts.component';
 import { CreateAccComponent } from './create-acc/create-acc.component';
-import { UploadaccComponent } from './uploadacc/uploadacc.component';
+import { UploadaccComponent } from './accounts/uploadacc/uploadacc.component';
 
 import { LayoutComponent } from './layout/layout.component';
 import { ForgotComponent } from './forgot/forgot.component';
@@ -39,6 +39,13 @@ import { ContactComponent } from './contact/contact.component';
 import { CreateConComponent } from './contact/create-con/create-con.component';
 import { NotesComponent } from './notes/notes.component';
 import { CreateNoteComponent } from './notes/create-note/create-note.component';
+import { UploadConComponent } from './contact/upload-con/upload-con.component';
+import { UploadLeadComponent } from './lead/upload-lead/upload-lead.component';
+import { LeadService } from './Shared/lead.service';
+import { ContactService } from './Shared/contact.service';
+import { RegService } from './Shared/reg.service';
+import { NotesService } from './Shared/notes.service';
+import { UploadOppComponent } from './opportunities/upload-opp/upload-opp.component';
 
 const appRoutes:Routes=
 [
@@ -97,7 +104,7 @@ const appRoutes:Routes=
   // {
   //        path:'AccName',component:AccNameComponent
   //      },
-  {path:'Signup', component: SignupComponent},
+ 
   {path:'Forgot',component: ForgotComponent},
   {path:'Signin',component: SigninComponent},
   {path:'Reg',component: RegComponent},
@@ -106,7 +113,7 @@ const appRoutes:Routes=
 @NgModule({
   declarations: [
     AppComponent,
-    SignupComponent,
+   
     HomeComponent,
     SigninComponent,
 
@@ -133,7 +140,10 @@ const appRoutes:Routes=
      ContactComponent,
      CreateConComponent,
      NotesComponent,
-     CreateNoteComponent
+     CreateNoteComponent,
+     UploadConComponent,
+     UploadLeadComponent,
+     UploadOppComponent
      
 
   ],
@@ -147,7 +157,7 @@ const appRoutes:Routes=
     HttpClientModule 
   ],
   
-  providers: [AccService,OppService,DatePipe,APImainService],
+  providers: [AccService,OppService,LeadService,ContactService,RegService,NotesService,DatePipe,APImainService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

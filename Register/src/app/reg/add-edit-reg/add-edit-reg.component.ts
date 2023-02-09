@@ -108,13 +108,12 @@ export class AddEditRegComponent implements OnInit {
         status:this.status,
         
       };
-      this.Service.insertRegister(val).subscribe(res=>
-        {
-          var closeModelBtn= document.getElementById('add-edit-model-close');
+      this.Service.insertRegister(val).subscribe(res=>{
+        var closeModelBtn= document.getElementById('add-edit-model-close');
           if(closeModelBtn){
             closeModelBtn.click();
           }
-          var showAddSuccess=document.getElementById('add-success-alert');
+          var showAddSuccess=document.getElementById('update-success-alert');
           if(showAddSuccess){
             showAddSuccess.style.display="block";
           } 

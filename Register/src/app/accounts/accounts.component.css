@@ -1,3 +1,4 @@
+
 .btn-colse.btn-close-white{
     color: white !important; 
 }
@@ -14,17 +15,17 @@ table {
   }
   
   tr:nth-child(even) {
-    background-color: #625f5f;
+    background-color:rgba(33, 26, 116, 0.592) ;
   }
 
-  #add-success-alert,
+#add-success-alert,
 #update-success-alert,
 #delete-success-alert{
     display: none;
 }
 #add-success-alert,
 #update-success-alert, 
-#delete-success-alert {
+#delete-success-alert{
 
 animation-name: fadeInAndOut;
 

@@ -1,0 +1,9 @@
+.border-warning{
+    border-color: rgb(33, 26, 116) !important;
+}
+.btn-org{
+    background-color: rgb(255, 165, 0);
+}
+.back{
+    background:linear-gradient(to bottom, rgb(33, 26, 116), rgb(73, 71, 97));    
+}

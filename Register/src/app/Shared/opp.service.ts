@@ -13,7 +13,7 @@ export class OppService {
   readonly APIUrl=this.ApiService.APIUrlmain;
   getOppList():Observable<any[]>
   {
-      return this.http.get<any>(this.APIUrl+"/Opportunities")
+      return this.http.get<any>(this.APIUrl+"/Opportunities/GetAlldata")
   }
   addOpportunity(val:any){
     return this.http.post(this.APIUrl+"/Opportunities/Insert",val)

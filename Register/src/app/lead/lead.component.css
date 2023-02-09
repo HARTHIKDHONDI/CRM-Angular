@@ -11,7 +11,7 @@ table {
   }
   
   tr:nth-child(even) {
-    background-color:#0c0b0c;
+    background-color:rgba(33, 26, 116, 0.592);
 }
 #add-success-alert,
 #update-success-alert,

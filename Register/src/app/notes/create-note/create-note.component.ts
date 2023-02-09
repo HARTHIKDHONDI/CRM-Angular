@@ -11,8 +11,8 @@ import { NotesService } from 'src/app/Shared/notes.service';
 export class CreateNoteComponent implements OnInit {
   dropdownList:any = [];
   selectedItems:any = [];
-   dropdownSettings!:IDropdownSettings ;
-    value!:number;
+  dropdownSettings!:IDropdownSettings ;
+  value!:number;
     
     
   constructor(private service:NotesService){
@@ -37,7 +37,7 @@ description:string= "";
 
    
     }
-      onItemSelect(item: any) {
+    onItemSelect(item: any) {
         console.log(item);}
         onSelectAll(items: any) 
         {

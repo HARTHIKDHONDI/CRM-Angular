@@ -2,7 +2,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js" integrity="sha512-2ImtlRlf2VVmiGZsjm9bEyhjGW4dU7B6TNwh/hx/iSByxNENtj3WVE6o/9Lj4TJeVXPi4bnOIMXFIJJAeufa0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <div class="container">
-    <div class="form-froup row d-flex justify-content-center align-content-center">
+    <div class="form-group row d-flex justify-content-center align-content-center">
         <div class="col-4"> 
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">leadname</label>
@@ -107,7 +107,7 @@
 <select class="form-select"  aria-label="Default select example1" [(ngModel)]="leadrating" name="LR" #LR="ngModel" required>
                         <option value="Warm">Warm</option>
                         <option value="Cold">Cold</option>
-                        <option value="CHotEO">Hot</option>
+                        <option value="Hot">Hot</option>
                         <option value="Junk">Junk</option>
                         
                     </select>
@@ -156,11 +156,11 @@
 
           
         </div>
-        <button (click)="addleads()" *ngIf="lead.leadid==0" class="btn btn-primary">
+        <button (click)="addleads()" *ngIf="lead.leadid==0" class="btn btn-org">
 
-            submit
+            Add
           </button>
-          <button (click)="updateleads()" *ngIf="lead.leadid!=0" class="btn btn-primary">
+          <button (click)="updateleads()" *ngIf="lead.leadid!=0" class="btn btn-org">
       
             Update
     </button>

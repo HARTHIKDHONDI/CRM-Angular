@@ -1,55 +1,60 @@
 <nav class="navbar navbar-light bg-light fixed-top" >
     <div class="container-fluid">
   
-      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+      <button class="navbar-toggler ms-3 me-5" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <a class="navbar-brand" href="#" style="color: rgb(33, 26, 116);"><b>CRM Fixity Technologies</b></a>
+      <div class="me-auto ">
+        <img src="../../assets/images/Fixity_Logo.png" width="70px" height="60px" alt="name" >
+      </div>
+
+      <div class="d-flex justify-content-center me-auto ">
+        <a class="navbar-brand" href="#" style="color: rgb(33, 26, 116); " ><b>CRM Fixity Technologies</b></a>
+      </div>        
+      
       <form class="d-flex mt-3" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-success" type="submit">Search</button>
       </form>
       
-      <div class="offcanvas  offcanvas-start  text-bg-light" style="width: 200px;" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+      <div class="offcanvas  offcanvas-start  text-bg-light" style="width: 200px; " tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
         <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">CRM Fixity</h5>
+          <h5 class="offcanvas-title " id="offcanvasDarkNavbarLabel " style="color:rgb(33, 26, 116) ; "><b>CRM Fixity</b></h5>
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
             <li class="nav-item">
-              <a class="nav-link " aria-current="page" routerLink="/Home">Home</a>
+              <a class="nav-link " aria-current="page" routerLink="/Home" style="color: rgb(33, 26, 116);"><b>Home</b></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" routerLink="/Accounts">Accounts</a>
+              <a class="nav-link" routerLink="/Accounts" style="color: rgb(33, 26, 116);"><b>Accounts</b></a>
             </li>
   
             <li class="nav-item">
-              <a class="nav-link" routerLink="Contacts">Contacts</a>
+              <a class="nav-link" routerLink="Contacts" style="color: rgb(33, 26, 116);"><b>Contacts</b></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" routerLink="Leads">Leads</a>
+              <a class="nav-link" routerLink="Leads" style="color: rgb(33, 26, 116);"><b>Leads</b></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" routerLink="Opportunities">Opportunities</a>
+              <a class="nav-link" routerLink="Opportunities" style="color: rgb(33, 26, 116);"><b>Opportunities</b></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" routerLink="#">Campaign</a>
+              <a class="nav-link" routerLink="#" style="color: rgb(33, 26, 116);"><b>Campaign</b></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" routerLink="Notes">Notes</a>
+              <a class="nav-link" routerLink="Notes" style="color: rgb(33, 26, 116);"><b>Notes</b></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" routerLink="Task">Task</a>
+              <a class="nav-link" routerLink="Task" style="color: rgb(33, 26, 116);"><b>Task</b></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" routerLink="Register">Register Details</a>
+              <a class="nav-link" routerLink="Register" style="color: rgb(33, 26, 116);"><b>Register Details</b></a>
             </li>
+            
             <li class="nav-item">
-              <a class="nav-link" href="/Signup">Sign up</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/Signin">Sign in</a>
+              <a class="nav-link" href="/Signin" style="color: rgb(33, 26, 116);"><b>Sign in</b></a>
             </li>
             <!-- <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -69,7 +74,7 @@
         </div>
       </div>
     </div>
-  </nav>
+</nav>
     
     <router-outlet></router-outlet>
 

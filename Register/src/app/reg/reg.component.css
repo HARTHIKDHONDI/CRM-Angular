@@ -40,5 +40,5 @@ table {
     padding: 8px;
     }
     tr:nth-child(even) {
-    background-color: #b6aaaa;
+        background-color:rgba(33, 26, 116, 0.592);
     }
