@@ -1,125 +1,111 @@
-<section class="ftco-section border border-dark border-5 rounded gap-3 p-3">
+<section class="ftco-section  gap-3 p-3">
     <div class="container">
-        
-        
         <div class="row justify-content-center ">
-
             <div class="col-md-6 text-center  mb-1">
-                <h2 class="heading-section">Accounts Details</h2>
+            <h2 class="heading-section" style="background-color: rgb(255, 165, 0);color: rgb(33, 26, 116);">Task Details</h2>
             </div> 
         </div>
         <!--MODAL-->
         <div class="row ">
-            <div class="col-6 justify-content-start">
+            <div class="col d-flex justify-content-end">
                 <!--CREATE-->
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-fullscreen">
                         <div class="modal-content" >
-                            <div class="modal-header" style="background-color: rgba(0, 0, 0, 0.753);">
+                            <div class="modal-header" style="background-color:rgba(33, 26, 116, 0.755);">
                                 <h1 class="modal-title fs-5 text-white" id="exampleModalLabel"  >Task Registration</h1>
-                                <button type="button"  class="btn  btn-light btn-close  btn-close-white fs-5" data-bs-dismiss="modal"  aria-label="Close" ></button>
+                                <button type="button"  class="btn   btn-close  btn-close-white fs-5" data-bs-dismiss="modal"  aria-label="Close" (click)="closeClick()" id="add-edit-model-close"></button>
                             </div>
                             <div class="modal-body">
-                                <app-create-task></app-create-task>
+                                <app-create-task [task]="task" *ngIf="ActivateAddEditTask"></app-create-task>
+                                <!-- <app-create-task></app-create-task>
+                                -->
                             </div>
-                            <div class="modal-footer" style="background-color: rgba(0, 0, 0, 0.753);">
-                                <button type="button" class="btn  btn-dark" data-bs-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-dark">Save changes</button>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>
-                
-                <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    Create
+                <button type="button" class="btn btn-dark me-3" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="addClick()" style="background-color: rgb(33, 26, 116)">
+                    <i class="fa fa-plus"></i>
                 </button>
-            </div>
+                <!-- </div> -->
             <!--File upload-->
-            <div class="col-6 d-flex justify-content-end">
+                <!-- <div class="col-6 d-flex justify-content-end"> -->
                 <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">            
-                            <div class="modal-header" style="background-color: rgba(0, 0, 0, 0.753);">
+                            <div class="modal-header" style="background-color: rgba(33, 26, 116, 0.755);">
                                 <h1 class="modal-title fs-5 text-white" id="exampleModalLabel1">File Upload </h1>
-                                <button type="button" class="btn  btn-light btn-close  btn-close-white fs-5" data-bs-dismiss="modal" aria-label="Close"></button>
+                                <button type="button" class="btn  btn-close  btn-close-white fs-5" data-bs-dismiss="modal" aria-label="Close" ></button>
                             </div>
                             <div class="modal-body">
-                                <!-- <app-uploadacc></app-uploadacc> -->
+                                <app-uploadacc></app-uploadacc>
                             </div>
-                            <div class="modal-footer" style="background-color: rgba(0, 0, 0, 0.753);">
-                                <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-dark">Save changes</button>
+                            <div class="modal-footer" style="background-color: rgba(33, 26, 116, 0.755);">
+                                <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-light">Save changes</button>
                             </div>
                         </div>
                     </div>
                 </div>
-                
-                <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal1">
-                    File Upload
+                <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal1" style="background-color: rgb(33, 26, 116);">
+                    <i class="fa fa-upload"></i>
                 </button>
             </div>
         </div>
         <br>
-    
+        <div class="alert alert-success mt-3 " role="alert" id="add-success-alert">Added Successfully</div>
+        <div class="alert alert-success mt-3" role="alert" id="update-success-alert">Updated Successfully</div>
+         <div class="alert alert-success mt-3 " role="alert" id="delete-success-alert">Deleted Successfully</div>
        <!--TABLE-->
           <div class="row-0">
             <div class="col-12">
                 <div class="table-wrap d-flex justify-content-center align-content-center ">
-
-                    <table class="table table-striped text-white " id="myTable">
-                        <thead >
-                            <tr  style="background-color:rgba(20, 19, 19, 0.945); ">
-                                <th>TaskID</th>
-                                <th >Task Category</th>
-                                <th>Title</th>
-                                <th>Priority</th>
-                                
-                                <th>DueDate</th>
-                                <th>DueTime</th>
-                                <th> Status</th>
-                               
-
-                            </tr>
-                        </thead>
-                        
-                        <tbody>
-                         
-                            <tr >
-                                <td>TaskID</td>
-                                <td> Task Category</td>
-                                <td>Title</td>
-                                <td>Priority</td>
-                               
-                                <td>DueDate</td>
-                                
-                               
-                                <td>DueTime</td>
-                                <td>Status</td>
-                            </tr>
-                        
-                    </tbody>
-                        <!-- <tbody>
-                         
-                                <tr *ngFor="let item of empService.listEmployee">
-                                    <td>{{item.recordid}}</td>
-                                    <td>{{item.companyname}}</td>
-                                    <td>{{item.typeofcompany}}</td>
-                                    <td>{{item.emailid}}</td>
-                                    <td>{{item.companyphoneno}}</td>
-                                    <td>{{item.jobsdescription}}</td>
-                                    <td>{{item.noofbranches}}</td>
-                                    <td>{{item.branchaddress}}</td>
-                                    <td>{{item.noofemployees}}</td>
-                                    <td>{{item.companyaddress}}</td>
-                                    <td>{{item.linkedinurl}}</td>
+                    <div class="table-responsive">
+                        <table class="table table-striped text-white " >
+                            <thead >
+                                <tr style="background-color:rgb(33, 26, 116)">
+                                    <th>TaskCategory</th>
                                     
-                                    <td>{{item.companywebsite}}</td>
-                                    <td>{{item.status}}</td>
-  
+                                    <th>SelectName</th> 
+                                    <th>TaskID</th>
+                                    <th>Title</th>
+                                    <th>Description </th>
+                                    <!-- <th>Priority</th>  -->
+                                    <th>Status</th>
+                                    <th>DueDate</th>
+                                    <th>DueTime</th>
+                                <!--  <th>ReminderDate</th>
+                                    <th>ReminderTime </th>  
+                                    <th>Notify</th>-->
+                                    <th>AssignTo</th>
+                                    <th>Actions</th>
                                 </tr>
-                            
-                        </tbody> -->
-                    </table>
+                            </thead>
+                            <tbody style="color:black">
+                                    <tr *ngFor="let item of taskList">
+                                        <td>{{item.taskCategory}}</td>
+                                        <!-- <td>{{item.selectModule}}</td> -->
+                                        <td>{{item.selectName}}</td> 
+                                        <td>{{item.taskID}}</td>
+                                        <td>{{item.title}}</td>
+                                        <td>{{item.description}}</td>
+                                        <!-- <td>{{item.priority}}</td>  -->
+                                        <td>{{item.status}}</td>
+                                        <td>{{item.dueDate}}</td>
+                                        <td>{{item.dueTime}}</td>
+                                        <!-- <td>{{item.reminderDate}}</td>
+                                        <td>{{item.reminderTime }}</td> 
+                                        <td>{{item.notify}}</td>-->
+                                        <td>{{item.assignTo}}</td> 
+                                        <td> 
+                                            <button type="button"class="btn btn-light mr-1 me-3" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="editClick(item)" > Edit </button> 
+                                            <button type="button" class="btn btn-light mr-1" (click)="deleteClick(item)" > Delete</button> 
+                                        </td>
+                                    </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>

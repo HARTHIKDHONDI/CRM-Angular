@@ -46,6 +46,7 @@ import { ContactService } from './Shared/contact.service';
 import { RegService } from './Shared/reg.service';
 import { NotesService } from './Shared/notes.service';
 import { UploadOppComponent } from './opportunities/upload-opp/upload-opp.component';
+import { ErrorpageComponent } from './errorpage/errorpage.component';
 
 const appRoutes:Routes=
 [
@@ -108,6 +109,7 @@ const appRoutes:Routes=
   {path:'Forgot',component: ForgotComponent},
   {path:'Signin',component: SigninComponent},
   {path:'Reg',component: RegComponent},
+  {path:'**',component: ErrorpageComponent},
 ];
 
 @NgModule({
@@ -143,7 +145,8 @@ const appRoutes:Routes=
      CreateNoteComponent,
      UploadConComponent,
      UploadLeadComponent,
-     UploadOppComponent
+     UploadOppComponent,
+     ErrorpageComponent
      
 
   ],
